@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Affinitic Theme"
+      directory="profiles/default"
+      description="Installs profile for Affinitic Theme"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

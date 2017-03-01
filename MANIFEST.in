@@ -1,0 +1,3 @@
+graft src/affinitic
+include *.rst
+global-exclude *.pyc
