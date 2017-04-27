@@ -4,25 +4,25 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <theme href="other.html" />
+    <theme href="base.html" />
 
     <notheme css:if-not-content="#visual-portal-wrapper" />
 
     <!-- Common Plone rules -->
     <rules css:if-content="#portal-top">
-      <!-- Attributes -->
-      <copy attributes="*" css:theme="html" css:content="html" />
-      <!-- Base tag -->
-      <before css:theme="title" css:content="base" />
-      <!-- Title -->
-      <replace css:theme="title" css:content="title" />
-      <!-- Pull in Plone Meta -->
-      <after css:theme-children="head" css:content="head meta" />
-      <!-- Don't use Plone icons, use the theme's -->
-      <drop css:content="head link[rel='apple-touch-icon']" />
-      <drop css:content="head link[rel='shortcut icon']" />
+        <!-- Attributes -->
+        <copy attributes="*" css:theme="html" css:content="html" />
+        <!-- Base tag -->
+        <before css:theme="title" css:content="base" />
+        <!-- Title -->
+        <replace css:theme="title" css:content="title" />
+        <!-- Pull in Plone Meta -->
+        <after css:theme-children="head" css:content="head meta" />
+        <!-- Don't use Plone icons, use the theme's -->
+        <drop css:content="head link[rel='apple-touch-icon']" />
+        <drop css:content="head link[rel='shortcut icon']" />
     </rules>
-  
+
     <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
     <copy attributes="*" css:content="body" css:theme="body" />
 
