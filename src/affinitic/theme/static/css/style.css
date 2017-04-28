@@ -165,8 +165,8 @@ ul.portaltabs li.selected{
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
 }
-/*EQUIPE*/
-.subsection-equipe #content-core {
+/*EQUIPE COLLECTION*/
+.portaltype-collection.section-equipe #content-core {
     height:auto;
     overflow: hidden;
     top:0px;
@@ -176,7 +176,7 @@ ul.portaltabs li.selected{
     position: relative;
     text-align:center;
 }
-.subsection-equipe #content-core article {
+.portaltype-collection.section-equipe #content-core article {
     background: #fff none repeat scroll 0 0;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     display: inline-block;
@@ -188,28 +188,28 @@ ul.portaltabs li.selected{
     text-align: center;
     width: 40%;
 }
-.subsection-equipe #content-core article:hover .tileFooter {
+.portaltype-collection.section-equipe #content-core article:hover .tileFooter {
     visibility: visible;
 }
 @media (max-width: 1200px) {
-    .subsection-equipe #content-core article {
+    .portaltype-collection.section-equipe #content-core article {
         width: 90%;
     }
 }
-.subsection-equipe #content-core article:last-child:after{
+.portaltype-collection.section-equipe #content-core article:last-child:after{
     content: "";
     clear : both;
 }
-.subsection-equipe #content-core article h2 {
+.portaltype-collection.section-equipe #content-core article h2 {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 0;
     margin-top: 25%;
 }
-.subsection-equipe #content-core article h2 a {
+.portaltype-collection.section-equipe #content-core article h2 a {
     color: #156b93;
  }
-.subsection-equipe #content-core article .tileImage {
+.portaltype-collection.section-equipe #content-core article .tileImage {
     border-radius: 100%;
     float: left;
     height: auto;
@@ -220,10 +220,10 @@ ul.portaltabs li.selected{
     top: 8%;
     width: 20%;
 }
-.subsection-equipe #content-core article .documentByLine {
+.portaltype-collection.section-equipe #content-core article .documentByLine {
     display: none;
 }
-.subsection-equipe #content-core article .tileImage img {
+.portaltype-collection.section-equipe #content-core article .tileImage img {
     height: auto;
     left: 0;
     min-height: 100%;
@@ -232,17 +232,17 @@ ul.portaltabs li.selected{
     top: 0;
     width: 100%;
 }
-.subsection-equipe #content-core article .tileBody {
+.portaltype-collection.section-equipe #content-core article .tileBody {
     color: #156b93;
  }
-.subsection-equipe #content-core article .tileBody:after {
+.portaltype-collection.section-equipe #content-core article .tileBody:after {
     color: #999;
     content: "support@affinitic.be";
     display: block;
     font-style: italic;
     margin-top: 3%;
 }
-.subsection-equipe #content-core article .tileFooter {
+.portaltype-collection.section-equipe #content-core article .tileFooter {
     bottom: 5%;
     clear: both;
     position: absolute;
@@ -250,11 +250,57 @@ ul.portaltabs li.selected{
     text-align: right;
     visibility: hidden;
 }
-.subsection-equipe #content-core article .tileFooter a {
-    color: #156b93
+.portaltype-collection.section-equipe #content-core article .tileFooter a {
+    color: #156b93;
+}
+/*EQUIPE INDIVIDUEL*/
+.portaltype-news-item.section-equipe #content header {
+    background-color: #fff;
+    color: #156b93;
+    display: block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 2%;
+}
+.portaltype-news-item.section-equipe #content header h1 {
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+.portaltype-news-item.section-equipe #content header .leadImage img {
+    border-radius: 100%;
+    float: left;
+    height: auto;
+    overflow: hidden;
+    width: 20%;
+}
+.portaltype-news-item.section-equipe #content #viewlet-above-content-body {
+    display: none;
+}
+.portaltype-news-item.section-equipe #content #content-core {
+    background-color: #fff;
+    color: #156b93;
+    display: block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+    padding: 2%;
+    text-align: left;
+    width: 50%;
+}
+.portaltype-news-item.section-equipe #content #content-core #parent-fieldname-text {
+    margin-left: 10%;
+}
+.portaltype-news-item.section-equipe #content #content-core #parent-fieldname-text a {
+    color: #156b93;
 }
 /*REFERENCES*/
-.subsection-references #content-core {
+.portaltype-collection.section-references #content-core {
     height:auto;
     overflow: hidden;
     top:0px;
@@ -264,7 +310,7 @@ ul.portaltabs li.selected{
     position: relative;
     text-align:center;
 }
-.subsection-references #content-core article {
+.portaltype-collection.section-references #content-core article {
     background: #fff none repeat scroll 0 0;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     display: inline-block;
@@ -276,10 +322,7 @@ ul.portaltabs li.selected{
     text-align: center;
     width: 40%;
 }
-.subsection-references #content-core article:first-child {
-    box-shadow: 5px 2px 5px rgba(240, 0, 0, 0.1);
-}
-.subsection-references #content-core article .tileImage {
+.portaltype-collection.section-references #content-core article .tileImage {
     height: 100%;
     left: 0;
     overflow: hidden;
@@ -288,7 +331,7 @@ ul.portaltabs li.selected{
     width: 100%;
     z-index: 2;
 }
-.subsection-references #content-core article .tileImage img {
+.portaltype-collection.section-references #content-core article .tileImage img {
     background-color: #fff;
     height: 100%;
     left: 0;
@@ -299,11 +342,11 @@ ul.portaltabs li.selected{
     transition: margin-top 1s;
     width: auto;
 }
-.subsection-references #content-core article:hover .tileImage img {
-    margin-top: -100%;
+.portaltype-collection.section-references #content-core article:hover .tileImage img {
+    margin-top: -110%;
     transition: margin-top 1s;
 }
-.subsection-references #content-core article h2 {
+.portaltype-collection.section-references #content-core article h2 {
     display: inline;
     font-size: 30px;
     font-weight: bold;
@@ -315,14 +358,14 @@ ul.portaltabs li.selected{
     z-index: 3;
     transition: top 1s;
 }
-.subsection-references #content-core article h2 a {
+.portaltype-collection.section-references #content-core article h2 a {
     color: #156b93;
  }
-.subsection-references #content-core article:hover h2 {
+.portaltype-collection.section-references #content-core article:hover h2 {
     top: 15%;
     transition: top 1s;
 }
- .subsection-references #content-core article .tileBody {
+ .portaltype-collection.section-references #content-core article .tileBody {
     color: #156b93;
     left: 0;
     opacity: 0;
@@ -331,20 +374,20 @@ ul.portaltabs li.selected{
     transition: opacity 1s, top 1s;
     width: 100%;
  }
-.subsection-references #content-core article:hover .tileBody {
+.portaltype-collection.section-references #content-core article:hover .tileBody {
     opacity: 1;
     top: 40%;
     transition: opacity 1s, top 1s;
 }
 @media (max-width: 1200px) {
-    .subsection-references #content-core article {
+    .portaltype-collection.section-references #content-core article {
         width: 90%;
     }
 }
-.subsection-references #content-core article .documentByLine {
+.portaltype-collection.section-references #content-core article .documentByLine {
     display: none;
 }
-.subsection-references #content-core article .tileFooter {
+.portaltype-collection.section-references #content-core article .tileFooter {
     display: none;
 }
 /*ANIMATION*/
