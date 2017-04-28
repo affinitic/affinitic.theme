@@ -25,12 +25,14 @@ $(document).ready(function(){
 //    });
 
 
-    $window.scroll(function(){
-        $('#content-core').find('article').each(function() {
-            class_el = get_style_no_view($(this));
-            $(this).addClass(class_el);
-            add_style($(this));
-        })
+    $('.subsection-equipe').each(function() {
+        $window.scroll(function(){
+            $('#content-core').find('article').each(function() {
+                class_el = get_style_no_view($(this));
+                $(this).addClass(class_el);
+                add_style($(this));
+            })
+        });
     });
 
     function add_style(el) {
