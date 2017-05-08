@@ -4,6 +4,10 @@ body {
     font-style: normal;
     font-weight: normal;
     color: #fff;
+    background-attachment: fixed;
+    background-image: url("../images/background2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 @font-face {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -149,15 +153,11 @@ ul.portaltabs li.selected{
 }
 /* CONTENT */
 #content{
-    background-attachment: fixed;
-    background-image: url("../images/background2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 100px;
-    padding-top: 100px;
-    position: absolute;
-    width: 100%;
-    text-align : center;
+    margin: 10%;
+    max-width: 100%;
+    min-height: 100%;
+    padding-bottom: 10%;
+    text-align: center;
 }
 #content header h1 {
     font-size: 4em;
@@ -165,231 +165,152 @@ ul.portaltabs li.selected{
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
 }
-/*EQUIPE COLLECTION*/
-.portaltype-collection.section-equipe #content-core {
-    height:auto;
-    overflow: hidden;
-    top:0px;
-    left:0px;
-    width: 80%;
-    margin:0px auto;
-    position: relative;
-    text-align:center;
+/*ACCUEIL*/
+.portaltype-collection.section-accueil #content {
+    margin: 0;
 }
-.portaltype-collection.section-equipe #content-core article {
-    background: #fff none repeat scroll 0 0;
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    margin: 2%;
-    min-height: 300px;
-    overflow: hidden;
-    padding: 2%;
-    position: relative;
-    text-align: center;
-    width: 40%;
+.portaltype-collection.section-accueil #content-core {
+    padding-top: 10%;
 }
-.portaltype-collection.section-equipe #content-core article:hover .tileFooter {
-    visibility: visible;
+.portaltype-collection.section-accueil #content-core article {
+    color: #fff;
 }
-@media (max-width: 1200px) {
-    .portaltype-collection.section-equipe #content-core article {
-        width: 90%;
-    }
+.portaltype-collection.section-accueil #content-core #slides_button_home {
+    margin-left: 95%;
+    margin-top: 20%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
-.portaltype-collection.section-equipe #content-core article:last-child:after{
-    content: "";
-    clear : both;
-}
-.portaltype-collection.section-equipe #content-core article h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 25%;
-}
-.portaltype-collection.section-equipe #content-core article h2 a {
-    color: #156b93;
- }
-.portaltype-collection.section-equipe #content-core article .tileImage {
+.portaltype-collection.section-accueil #content-core #button_home {
+    background-color: #fff;
     border-radius: 100%;
-    float: left;
-    height: auto;
-    margin-left: 36%;
-    overflow: hidden;
-    padding-bottom: 20%;
-    position: absolute;
-    top: 8%;
-    width: 20%;
+    height: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 20px;
+    transition: background-color 0.5s;
 }
-.portaltype-collection.section-equipe #content-core article .documentByLine {
-    display: none;
+.portaltype-collection.section-accueil #content-core #button_home:hover {
+    background-color: #156b93;
+    transition: background-color 0.5s;
 }
-.portaltype-collection.section-equipe #content-core article .tileImage img {
-    height: auto;
+.portaltype-collection.section-accueil #content-core article .contentItem {
+    position: relative;
+    z-index: 2;
+}
+.portaltype-collection.section-accueil #content-core article .tileImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
     left: 0;
-    min-height: 100%;
-    min-width: 100%;
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
-.portaltype-collection.section-equipe #content-core article .tileBody {
-    color: #156b93;
- }
-.portaltype-collection.section-equipe #content-core article .tileBody:after {
-    color: #999;
-    content: "support@affinitic.be";
-    display: block;
-    font-style: italic;
-    margin-top: 3%;
+.portaltype-collection.section-accueil #content-core article .tileImage.Front {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    -o-filter: blur(2px);
+    filter: blur(2px);
+    opacity: 0.7;
 }
-.portaltype-collection.section-equipe #content-core article .tileFooter {
-    bottom: 5%;
-    clear: both;
-    position: absolute;
-    right: 5%;
-    text-align: right;
-    visibility: hidden;
+.portaltype-collection.section-accueil #content-core article .tileImage.Back {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0.5;
 }
-.portaltype-collection.section-equipe #content-core article .tileFooter a {
-    color: #156b93;
-}
-/*EQUIPE INDIVIDUEL*/
-.portaltype-news-item.section-equipe #content header {
-    background-color: #fff;
-    color: #156b93;
-    display: block;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    padding: 2%;
-}
-.portaltype-news-item.section-equipe #content header h1 {
-    font-size: 3em;
+.portaltype-collection.section-accueil #content-core article h1 {
+    font-size: 4em;
     font-weight: 900;
-    margin: 0;
+    margin-bottom: 2%;
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
 }
-.portaltype-news-item.section-equipe #content header .leadImage img {
-    border-radius: 100%;
-    float: left;
-    height: auto;
-    overflow: hidden;
-    width: 20%;
+.portaltype-collection.section-accueil #content-core article h1 {
+    color: #fff;
 }
-.portaltype-news-item.section-equipe #content #viewlet-above-content-body {
-    display: none;
-}
-.portaltype-news-item.section-equipe #content #content-core {
+/*SERVICES*/
+.portaltype-folder.section-services #content-core article {
     background-color: #fff;
     color: #156b93;
-    display: block;
+    float: left;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+.portaltype-folder.section-services #content-core article .tileImage {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -30px;
-    padding: 2%;
-    text-align: left;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: 2;
+    margin-left: 0;
+    transition: margin-left 1s ease 0s;
+}
+.portaltype-folder.section-services #content-core article:nth-child(2) .tileImage {
+    margin-left: 50%;
+    transition: margin-left 1s ease 0s;
+}
+.portaltype-folder.section-services #content-core article:hover .tileImage{
+    margin-left: 50%;
+    transition: margin-left 1s ease 0s;
+}
+.portaltype-folder.section-services #content-core article:nth-child(2):hover .tileImage{
+    margin-left: 0;
+    transition: margin-left 1s ease 0s;
+}
+.portaltype-folder.section-services #content-core article a {
+    color: #156b93;
+ }
+.portaltype-folder.section-services #content-core article .contentItem {
+    padding-bottom: 10%;
+    padding-top: 10%;
+}
+.portaltype-folder.section-services #content-core article .tileHeader {
+    margin-left: 50%;
+}
+.portaltype-folder.section-services #content-core article:nth-child(2) .tileHeader {
+    margin-left: 0;
+    margin-right: 50%;
+}
+.portaltype-folder.section-services #content-core article .tileBody,
+.portaltype-folder.section-services #content-core article .tileFooter {
+    margin-right: 50%;
+}
+.portaltype-folder.section-services #content-core article:nth-child(2) .tileBody,
+.portaltype-folder.section-services #content-core article:nth-child(2) .tileFooter {
+    margin-right: 0;
+    margin-left: 50%;
+}
+/*CONTACT*/
+.portaltype-document.section-contact #adresse {
+    float: left;
+    margin-top: 5%;
+    min-height: 400px;
     width: 50%;
 }
-.portaltype-news-item.section-equipe #content #content-core #parent-fieldname-text {
-    margin-left: 10%;
+.portaltype-document.section-contact #carte {
+    border: 10px solid #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    float: left;
+    margin-top: 5%;
+    min-height: 400px;
+    width: 45%;
 }
-.portaltype-news-item.section-equipe #content #content-core #parent-fieldname-text a {
-    color: #156b93;
+#clear {
+    clear: both;
 }
-/*REFERENCES*/
-.portaltype-collection.section-references #content-core {
-    height:auto;
-    overflow: hidden;
-    top:0px;
-    left:0px;
-    width: 80%;
-    margin:0px auto;
-    position: relative;
-    text-align:center;
-}
-.portaltype-collection.section-references #content-core article {
-    background: #fff none repeat scroll 0 0;
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    margin: 2%;
-    min-height: 300px;
-    overflow: hidden;
-    padding: 2%;
-    position: relative;
-    text-align: center;
-    width: 40%;
-}
-.portaltype-collection.section-references #content-core article .tileImage {
-    height: 100%;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-}
-.portaltype-collection.section-references #content-core article .tileImage img {
-    background-color: #fff;
-    height: 100%;
-    left: 0;
-    margin-top: -15%;
-    min-width: 100%;
-    position: absolute;
-    top: 0;
-    transition: margin-top 1s;
-    width: auto;
-}
-.portaltype-collection.section-references #content-core article:hover .tileImage img {
-    margin-top: -110%;
-    transition: margin-top 1s;
-}
-.portaltype-collection.section-references #content-core article h2 {
-    display: inline;
-    font-size: 30px;
-    font-weight: bold;
-    left: 0;
-    margin-bottom: 0;
-    position: absolute;
-    top: 75%;
-    width: 100%;
-    z-index: 3;
-    transition: top 1s;
-}
-.portaltype-collection.section-references #content-core article h2 a {
-    color: #156b93;
- }
-.portaltype-collection.section-references #content-core article:hover h2 {
-    top: 15%;
-    transition: top 1s;
-}
- .portaltype-collection.section-references #content-core article .tileBody {
-    color: #156b93;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 100%;
-    transition: opacity 1s, top 1s;
-    width: 100%;
- }
-.portaltype-collection.section-references #content-core article:hover .tileBody {
-    opacity: 1;
-    top: 40%;
-    transition: opacity 1s, top 1s;
-}
-@media (max-width: 1200px) {
-    .portaltype-collection.section-references #content-core article {
-        width: 90%;
-    }
-}
-.portaltype-collection.section-references #content-core article .documentByLine {
-    display: none;
-}
-.portaltype-collection.section-references #content-core article .tileFooter {
-    display: none;
-}
+
 /*ANIMATION*/
 .no-view-left {
     opacity: 0;
@@ -422,4 +343,250 @@ ul.portaltabs li.selected{
     -o-transform: translate(0px, 0px) !important;
     -ms-transform: translate(0px, 0px) !important;
     transform: translate3d(0px, 0px, 0px);
+}
+/*REFERENCES COLLECTION*/
+.template-clientfolderview #content-core {
+    height:auto;
+    overflow: hidden;
+    top:0px;
+    left:0px;
+    width: 80%;
+    margin:0px auto;
+    position: relative;
+    text-align:center;
+}
+.template-clientfolderview #content-core article {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 2%;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+    width: 40%;
+}
+.template-clientfolderview  #content-core article .tileImage {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.template-clientfolderview  #content-core article .tileImage {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    margin-top: -15%;
+    min-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: margin-top 1s;
+    width: 100%;
+}
+.template-clientfolderview  #content-core article:hover .tileImage {
+    margin-top: -110%;
+    transition: margin-top 1s;
+}
+.template-clientfolderview  #content-core article h2 {
+    color: #156b93;
+    display: inline;
+    font-size: 30px;
+    font-weight: bold;
+    left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 75%;
+    width: 100%;
+    z-index: 3;
+    transition: top 1s;
+ }
+.template-clientfolderview  #content-core article:hover h2 {
+    top: 10%;
+    transition: top 1s;
+}
+.template-clientfolderview  #content-core article .tileBody {
+    color: #156b93;
+    left: 0;
+    opacity: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: absolute;
+    top: 100%;
+    transition: opacity 1s ease 0s, top 1s ease 0s;
+    width: 80%;
+ }
+.template-clientfolderview  #content-core article:hover .tileBody {
+    opacity: 1;
+    top: 35%;
+    transition: opacity 1s, top 1s;
+}
+@media (max-width: 1200px) {
+    .template-clientfolderview  #content-core article {
+        width: 90%;
+    }
+}
+.template-clientfolderview #content-core article .tileFooter {
+    bottom: -100%;
+    color: #156b93;
+    margin: 5%;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease 0s, bottom 1s ease 0s;
+    right: 0;
+}
+.template-clientfolderview #content-core article:hover .tileFooter {
+    bottom: 0;
+    opacity: 1;
+    transition: opacity 1s ease 0s, bottom 1s ease 0s;
+}
+/*EQUIPE COLLECTION*/
+.template-zaffolderview #content-core {
+    height: auto;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    top: 0;
+}
+.template-zaffolderview #content-core article {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 2%;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+    width: 40%;
+}
+.template-zaffolderview #content-core article:hover .tileFooter {
+    visibility: visible;
+}
+@media (max-width: 1200px) {
+    .template-zaffolderview #content-core article {
+        width: 90%;
+    }
+}
+.template-zaffolderview #content-core article:last-child:after{
+    content: "";
+    clear : both;
+}
+.template-zaffolderview #content-core article h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 5%;
+    color: #156b93;
+ }
+.template-zaffolderview #content-core article .tileImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    overflow: hidden;
+    padding-bottom: 20%;
+    width: 20%;
+}
+.template-zaffolderview #content-core article .tileBody {
+    color: #156b93;
+    height: 30px;
+}
+.template-zaffolderview #content-core article .tileMail {
+    margin-top: 5%;
+}
+.template-zaffolderview #content-core article .tileMail a {
+    color: #999;
+ }
+.template-zaffolderview #content-core article .tileFooter {
+    bottom: 5%;
+    clear: both;
+    position: absolute;
+    right: 5%;
+    text-align: right;
+    visibility: hidden;
+    color: #156b93;
+}
+/*EQUIPE INDIVIDUEL*/
+.template-zafview #content article {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    color: #156b93;
+    margin: 10%;
+    padding: 10%;
+    max-width: 60%;
+}
+.template-zafview #content #zaf-boyz-description .tileImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    float: left;
+    overflow: hidden;
+    padding-bottom: 10%;
+    position: absolute;
+    width: 10%;
+}
+.template-zafview #content article h1 {
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0 0 0 30%;
+    text-align: center;
+    text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+.template-zafview #content article h2 {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-left: 30%;
+    margin-top: 1%;
+}
+.template-zafview #content article .date {
+    color: #999;
+    margin-left: 30%;
+    text-align: center;
+}
+.template-zafview #content article #description {
+    margin-top: 10%;
+    text-align: left;
+    width: 100%;
+}
+.template-zafview #content article #description div {
+}
+.template-zafview #content article #contact {
+    position: absolute;
+    width: 20%;
+}
+.template-zafview #content article #contact a {
+    color: #156b93;
+}
+.template-zafview #content article #experience {
+    display: inline-block;
+    margin-left: 40%;
+}
+@media (max-width: 1200px) {
+    .template-zafview #content article {
+        max-width: 95%;
+    }
+    .template-zafview #content article h1 {
+        font-size: 2em;
+    }
+    .template-zafview #content article #contact {
+        position: relative;
+        width: 100%;
+    }
+    .template-zafview #content article #experience {
+        width: 100%;
+        margin-left: 0;
+    }
 }
