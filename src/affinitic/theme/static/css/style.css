@@ -5,7 +5,7 @@ body {
     font-weight: normal;
     color: #fff;
     background-attachment: fixed;
-    background-image: url("../images/background2.png");
+    background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -23,9 +23,12 @@ a:hover {
 li {
     list-style-type: square;
 }
+h2 {
+    font-weight: 400;
+}
 /* NAVBAR */
 .navbar{
-    background-image: url("../images/background2.png");
+    background-image: url("../images/background.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -169,9 +172,14 @@ ul.portaltabs li.selected{
 .portaltype-collection.section-accueil #content {
     margin: 0;
 }
+.portaltype-collection.section-accueil #content-core {
+  margin:0;
+  padding:0;
+}
 .portaltype-collection.section-accueil #content-core article {
-    padding-top: 10%;
     color: #fff;
+    overflow: hidden;
+    padding-top: 10%;
     position: relative;
 }
 .portaltype-collection.section-accueil #content-core #buttons_home {
@@ -193,7 +201,7 @@ ul.portaltabs li.selected{
     width: 20px;
 }
 .portaltype-collection.section-accueil #content-core #button_home:hover {
-    background-color: #156b93;
+    background-color: #1076ca;
     transition: background-color 0.5s;
 }
 .portaltype-collection.section-accueil #content-core article .contentItem {
@@ -207,7 +215,8 @@ ul.portaltabs li.selected{
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
 }
-.portaltype-collection.section-accueil #content-core article h1 {
+.portaltype-collection.section-accueil #content-core article h1,
+.portaltype-collection.section-accueil #content-core article a:hover {
     color: #fff;
 }
 .portaltype-collection.section-accueil #content-core article .tileImage {
@@ -237,10 +246,22 @@ ul.portaltabs li.selected{
     filter: blur(5px);
     opacity: 0.5;
 }
+.portaltype-collection.section-accueil #content-core article .tileFooter {
+    display: inline-block;
+    font-size: 16px;
+    border: 3px solid #FFF;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+.portaltype-collection.section-accueil #content-core article a .tileFooter:hover {
+    background-color: #fff;
+    color: #1076ca;
+}
 /*SERVICES*/
 .portaltype-folder.section-services #content-core article {
     background-color: #fff;
-    color: #156b93;
+    color: #1076ca;
     float: left;
     margin: 0;
     position: relative;
@@ -271,7 +292,7 @@ ul.portaltabs li.selected{
     transition: margin-left 1s ease 0s;
 }
 .portaltype-folder.section-services #content-core article a {
-    color: #156b93;
+    color: #1076ca;
  }
 .portaltype-folder.section-services #content-core article .contentItem {
     padding-bottom: 10%;
@@ -396,24 +417,22 @@ ul.portaltabs li.selected{
     transition: margin-top 1s;
 }
 .template-clientfolderview  #content-core article h2 {
-    color: #156b93;
+    color: #1076ca;
     display: inline;
-    font-size: 30px;
-    font-weight: bold;
     left: 0;
-    margin-bottom: 0;
+    margin-top: 5%;
     position: absolute;
     top: 75%;
+    transition: top 1s ease 0s;
     width: 100%;
     z-index: 3;
-    transition: top 1s;
  }
 .template-clientfolderview  #content-core article:hover h2 {
     top: 10%;
     transition: top 1s;
 }
 .template-clientfolderview  #content-core article .tileBody {
-    color: #156b93;
+    color: #1076ca;
     left: 0;
     opacity: 0;
     padding-left: 10%;
@@ -433,9 +452,22 @@ ul.portaltabs li.selected{
         width: 90%;
     }
 }
+.template-clientfolderview #content-core article .tileServices {
+    margin-left: auto;
+    margin-right: auto;
+}
+.template-clientfolderview #content-core article .tileServices .img {
+    background-image: url("../images/icones/bleu_developpement.gif");
+    background-size: cover;
+    content: "";
+    display: inline-block;
+    margin-top: 5%;
+    padding-top: 10%;
+    width: 10%;
+}
 .template-clientfolderview #content-core article .tileFooter {
     bottom: -100%;
-    color: #156b93;
+    color: #1076ca;
     margin: 5%;
     opacity: 0;
     position: absolute;
@@ -446,6 +478,102 @@ ul.portaltabs li.selected{
     bottom: 0;
     opacity: 1;
     transition: opacity 1s ease 0s, bottom 1s ease 0s;
+}
+/*REFERENCES ITEM*/
+.template-clientview #content {
+    margin-top: 0;
+    padding-top: 5%;
+}
+.template-clientview article {
+    padding: 2%;
+    background-color: #fff;
+    color: #999;
+    font-size: 18px;
+}
+.template-clientview article a,
+.template-clientview article a:hover {
+    color: #999;
+}
+.template-clientview article h2 {
+    color: #1076ca;
+}
+.template-clientview #client-testimonial {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    margin-bottom: 5%;
+    padding: 3% 20%;
+}
+.template-clientview #client-testimonial .title {
+    color: #1076ca;
+    font-size: 30px;
+}
+.template-clientview #client-testimonial h2:before {
+    content: "“";
+    font-family: arial;
+    font-size: 60px;
+    font-weight: 900;
+    margin-left: -40px;
+    margin-top: -10px;
+    position: absolute;
+}
+.template-clientview #client-testimonial h2:after {
+    content: "”";
+    font-family: arial;
+    font-size: 60px;
+    font-weight: 900;
+    margin-left: 10px;
+    margin-top: 20px;
+    position: absolute;
+}
+.template-clientview #client-description {
+    float: left;
+    width: 60%;
+}
+.template-clientview #client-description .img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10%;
+    padding-bottom: 60%;
+    width: 100%;
+}
+.template-clientview #client-resume {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 30%;
+}
+.template-clientview #client-resume .resume:before {
+    background-image: url("../images/icones/bleu_developpement.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    float: left;
+    margin-right: 5%;
+    padding-top: 15%;
+    width: 15%;
+}
+.template-clientview #client-resume .resume{
+    clear: both;
+    margin-bottom: 10%;
+}
+.template-clientview #client-resume .resume h2 {
+    margin: 0;
+}
+.template-clientview #client-resume .service .img {
+    background-image: url("../images/icones/bleu_developpement.gif");
+    background-size: cover;
+    content: "";
+    display: block;
+    float: left;
+    margin-right: 2%;
+    padding-top: 15%;
+    width: 15%;
+}
+.template-clientview #client-resume .number_nbr{
+    font-size: 30px;
 }
 /*EQUIPE COLLECTION*/
 .template-zaffolderview #content-core {
@@ -486,7 +614,7 @@ ul.portaltabs li.selected{
     font-weight: bold;
     margin-bottom: 0;
     margin-top: 5%;
-    color: #156b93;
+    color: #1076ca;
  }
 .template-zaffolderview #content-core article .tileImage {
     background-repeat: no-repeat;
@@ -500,7 +628,7 @@ ul.portaltabs li.selected{
     width: 20%;
 }
 .template-zaffolderview #content-core article .tileBody {
-    color: #156b93;
+    color: #1076ca;
     height: 30px;
 }
 .template-zaffolderview #content-core article .tileMail {
@@ -516,13 +644,13 @@ ul.portaltabs li.selected{
     right: 5%;
     text-align: right;
     visibility: hidden;
-    color: #156b93;
+    color: #1076ca;
 }
 /*EQUIPE INDIVIDUEL*/
 .template-zafview #content article {
     background: #fff none repeat scroll 0 0;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
-    color: #156b93;
+    color: #1076ca;
     margin: 10%;
     padding: 10%;
     max-width: 60%;
@@ -569,7 +697,7 @@ ul.portaltabs li.selected{
     width: 20%;
 }
 .template-zafview #content article #contact a {
-    color: #156b93;
+    color: #1076ca;
 }
 .template-zafview #content article #experience {
     display: inline-block;
