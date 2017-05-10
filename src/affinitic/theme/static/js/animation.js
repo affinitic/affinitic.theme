@@ -9,22 +9,6 @@ $(document).ready(function(){
     var window_height = $window.height();
     var window_width = $window.width();
 
-//    Parallax
-//    var lastScrollTop = 0;
-//    $( window ).scroll(function() {
-//        var st = $(this).scrollLeft();
-//        if (st > lastScrollTop){
-//            scroll = "0";
-//        } else {
-//            scroll = "1";
-//        }
-//        lastScrollTop = st;
-
-//        var scrolled = $(window).scrollLeft();
-//        document.getElementById('portal-header').style.left = scrolled / 2 + "px";
-//    });
-
-
     $('.template-zaffolderview').each(function() {
         $window.scroll(function(){
             $('#content-core').find('article').each(function() {
@@ -62,52 +46,58 @@ $(document).ready(function(){
 
 //    ACCUEIL
     $('#slides_home').each(function() {
-        nbr_slide = $(this).find('article').size();
-        width_slides_home = nbr_slide * 100 + '%';
-        width_article_home = 100 / nbr_slide + '%';
-        $('#slides_home').css('width', width_slides_home);
-        $(this).append( '<div id="slides_button_home"></div>' );
-        i=0;
         $(this).find('article').each(function() {
-            i++;
-            id = 'button_' + i;
-            $(this).attr('id', id)
-            $(this).css('float', 'left');
-            $(this).css('width', width_article_home);
-            $('#slides_button_home').append( '<a href="#' + id + '" class="button_home"><div id="button_home"></div></a>' );
+            $(this).css('height', window_height);
         });
     });
     $('.button_home').click(function(){
         var id = $(this).attr("href");
-        var offset = $(id).offset().left
-        $('html, body').animate({scrollLeft: offset}, 'slow');
+        var offset = $(id).offset().top;
+        $('html, body').animate({scrollTop: offset}, 750);
         return false;
     });
 
-
-    function position_scroll(el) {
-        el_offset_left = el.offset().left;
-        quart = el.outerWidth() / 4;
-        el_offset_right = el_offset_left + el.outerWidth();
-        position = el_offset_left + 1;
-
-        var docScroll = $window.scrollLeft();
-        if( (docScroll > (el_offset_left - quart) ) && (docScroll < (el_offset_right - quart  )) ){
-            $('html, body').animate({scrollLeft: position}, 'slow');
-            return false;
+//    Parallax
+    var lastScrollTop = 0;
+    $( window ).scroll(function() {
+        var scrolled = $(this).scrollTop();
+        var scrolled_pourcent = (scrolled / window_height) * 100;
+        if (scrolled > lastScrollTop){
+            scroll = "0";
+        } else {
+            scroll = "1";
         }
-    }
+        lastScrollTop = scrolled;
 
-//    $( window ).scroll(function() {
-//        clearTimeout( $.data( this, "scrollCheck" ) );
-//        $.data( this, "scrollCheck", setTimeout(function() {
-//            $('#slides_home').find('article').each(function() {
-//                position_scroll($(this));
-//            });
-//        }, 500) );
-//        return false;
-//    });
+        var articles = document.getElementsByClassName("tileItem");
+        var i;
+        for (i = 0; i < articles.length; i++) {
+            article = articles[i];
+            article_top = article.offsetTop;
+            article_height = article.offsetHeight;
+            article_bottom = article_top + article_height;
 
+            visible = scrolled - article_top;
+            pourcent = (visible * 100) / article_height;
+            front = document.getElementById('front_' + article.id);
+            front.style.top = - pourcent + '%';
+            back = document.getElementById('back_' + article.id);
+            back.style.top = - (pourcent / 1.2) + '%';
+        }
 
-
+//        $('#slides_home').find('article').each(function() {
+//            article = $(this);
+//            article_top = $(this).offset().top;
+//            article_height = article.outerHeight();
+//            article_bottom = article_top + article_height;
+//            visible = scrolled - article_top;
+//            pourcent = (visible * 100) / article_height;
+//            article.find('.Front').each(function() {
+//                $(this).css('top', - (pourcent * 2) + '%');
+//            })
+//            article.find('.Back').each(function() {
+//                $(this).css('top', - (pourcent * 4) + '%');
+//            })
+//        });
+    });
 });
