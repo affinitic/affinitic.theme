@@ -326,6 +326,7 @@ ul.portaltabs li.selected{
     margin: 0 20%;
     max-width: 100%;
     min-height: 100%;
+    padding-bottom: 0;
     position: relative;
     z-index: 3;
 }
@@ -379,7 +380,27 @@ ul.portaltabs li.selected{
     z-index: 2;
 }
 .portaltype-document.section-contact #adresse .texte {
-    width: 40%;
+    margin-bottom: 10%;
+    width: 50%;
+}
+.portaltype-document.section-contact #adresse .img:before {
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    float: left;
+    margin-right: 5%;
+    padding-top: 10%;
+    width: 10%;
+}
+.portaltype-document.section-contact #adresse .img.adress:before {
+    background-image: url("../images/icones/bleu_address.gif");
+}
+.portaltype-document.section-contact #adresse .img.phone:before {
+    background-image: url("../images/icones/bleu_phone.gif");
+}
+.portaltype-document.section-contact #adresse .img.mail:before {
+    background-image: url("../images/icones/bleu_mail.gif");
 }
 .portaltype-document.section-contact #carte_background {
     filter: hue-rotate(120deg) saturate(30%) brightness(110%);
@@ -391,16 +412,25 @@ ul.portaltabs li.selected{
     text-align: center;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
+}
+.portaltype-document.section-contact #adresse:before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 .portaltype-document.section-contact #carte_vignette {
     border: medium none;
-    filter: hue-rotate(180deg) saturate(50%);
+    filter: saturate(170%);
     height: 350px;
     margin-right: 5%;
-    margin-top: -370px;
     position: absolute;
     right: 0;
+    top: 50%;
     width: 40%;
     z-index: 4;
 }
@@ -532,13 +562,24 @@ ul.portaltabs li.selected{
     margin-right: auto;
 }
 .template-clientfolderview #content-core article .tileServices .img {
-    background-image: url("../images/icones/bleu_developpement.gif");
     background-size: cover;
     content: "";
     display: inline-block;
     margin-top: 5%;
     padding-top: 10%;
     width: 10%;
+}
+.img.webdesign{
+    background-image: url("../images/icones/bleu_webdesign.gif");
+}
+.img.developpement{
+    background-image: url("../images/icones/bleu_developpement.gif");
+}
+.img.hebergement{
+    background-image: url("../images/icones/bleu_infrastructure.gif");
+}
+.img.coaching{
+    background-image: url("../images/icones/bleu_coaching.gif");
 }
 .template-clientfolderview #content-core article .tileFooter {
     bottom: -100%;
@@ -621,7 +662,6 @@ ul.portaltabs li.selected{
     width: 30%;
 }
 .template-clientview #client-resume .resume:before {
-    background-image: url("../images/icones/bleu_developpement.gif");
     background-repeat: no-repeat;
     background-size: cover;
     content: "";
@@ -631,6 +671,15 @@ ul.portaltabs li.selected{
     padding-top: 15%;
     width: 15%;
 }
+.template-clientview #client-resume .resume.client:before {
+    background-image: url("../images/icones/bleu_client.gif");
+}
+.template-clientview #client-resume .resume.web:before {
+    background-image: url("../images/icones/bleu_lien.gif");
+}
+.template-clientview #client-resume .resume.task:before {
+    background-image: url("../images/icones/bleu_task.gif");
+}
 .template-clientview #client-resume .resume{
     clear: both;
     margin-bottom: 10%;
@@ -639,7 +688,6 @@ ul.portaltabs li.selected{
     margin: 0;
 }
 .template-clientview #client-resume .service .img {
-    background-image: url("../images/icones/bleu_developpement.gif");
     background-size: cover;
     content: "";
     display: block;
