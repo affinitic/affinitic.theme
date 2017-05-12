@@ -25,6 +25,7 @@ li {
 }
 h2 {
     font-weight: 400;
+    font-size: 30px;
 }
 /* NAVBAR */
 .navbar{
@@ -796,16 +797,21 @@ header .description:after {
     color: #fff;
 }
 .template-zaffolderview #content-core article {
-    background: #fff none repeat scroll 0 0;
+    background: #fff;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    color: #1076ca;
     display: inline-block;
     margin: 2%;
-    min-height: 300px;
+    min-height: 250px;
     overflow: hidden;
     padding: 2%;
     position: relative;
     text-align: center;
     width: 40%;
+}
+.template-zaffolderview #content-core article:hover {
+    background: #1076ca;
+    color: #fff;
 }
 .template-zaffolderview #content-core article:hover .tileFooter {
     visibility: visible;
@@ -819,12 +825,17 @@ header .description:after {
     content: "";
     clear : both;
 }
+.template-zaffolderview #content-core article a {
+    color: #1076ca;
+    transition: color 1s;
+}
+.template-zaffolderview #content-core article:hover a {
+    color: #fff;
+    transition: color 1s;
+}
 .template-zaffolderview #content-core article h2 {
-    font-size: 30px;
-    font-weight: bold;
     margin-bottom: 0;
     margin-top: 5%;
-    color: #1076ca;
  }
 .template-zaffolderview #content-core article .tileImage {
     background-repeat: no-repeat;
@@ -832,21 +843,46 @@ header .description:after {
     border-radius: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 7%;
+    opacity: 1;
     overflow: hidden;
-    padding-bottom: 20%;
-    width: 20%;
+    padding-bottom: 35%;
+    width: 35%;
+    transition: width 1s, padding-bottom 1s, opacity 1s;
 }
-.template-zaffolderview #content-core article .tileBody {
-    color: #1076ca;
-    height: 30px;
+.template-zaffolderview #content-core article:hover .tileImage {
+    opacity: 0;
+    padding-bottom: 0%;
+    width: 0%;
+    transition: width 1s, padding-bottom 1s, opacity 1s;
 }
 .template-zaffolderview #content-core article .tileMail {
     margin-top: 5%;
 }
-.template-zaffolderview #content-core article .tileMail a {
-    color: #999;
- }
+.template-zaffolderview #content-core article .tileBody {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    margin-top: 100%;
+    top: 0;
+    transition: margin-top 1s;
+}
+.template-zaffolderview #content-core article .tileMail {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    margin-top: 100%;
+    top: 0;
+    transition: margin-top 1s;
+}
+.template-zaffolderview #content-core article:hover .tileBody {
+    margin-top: 35%;
+    transition: margin-top 1s;
+}
+.template-zaffolderview #content-core article:hover .tileMail {
+    margin-top: 45%;
+    transition: margin-top 1s;
+}
 .template-zaffolderview #content-core article .tileFooter {
     bottom: 5%;
     clear: both;
@@ -854,7 +890,6 @@ header .description:after {
     right: 5%;
     text-align: right;
     visibility: hidden;
-    color: #1076ca;
 }
 /*EQUIPE INDIVIDUEL*/
 .template-zafview #content article {
