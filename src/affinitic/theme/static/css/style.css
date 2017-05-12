@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Avenir';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 200;
     color: #fff;
     background-attachment: fixed;
     background-image: url("../images/background.jpg");
@@ -155,12 +155,45 @@ ul.portaltabs li.selected{
     }
 }
 /* CONTENT */
-#content{
-    margin: 10%;
+#content {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 20%;
     max-width: 100%;
     min-height: 100%;
     padding-bottom: 10%;
     text-align: center;
+}
+header {
+    color: #1076ca;
+    padding: 10% 10% 5%;
+    position: relative;
+    z-index: 3;
+}
+header .description {
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+    font-size: 30px;
+    font-weight: 400;
+    padding: 5% 0;
+}
+header .description:before {
+    content: "“";
+    font-family: arial;
+    font-size: 60px;
+    font-weight: 900;
+    margin-left: -40px;
+    margin-top: -10px;
+    position: absolute;
+}
+header .description:after {
+    content: "”";
+    font-family: arial;
+    font-size: 60px;
+    font-weight: 900;
+    margin-left: 10px;
+    margin-top: 20px;
+    position: absolute;
 }
 #content header h1 {
     font-size: 4em;
@@ -171,6 +204,10 @@ ul.portaltabs li.selected{
 /*ACCUEIL*/
 .portaltype-collection.section-accueil #content {
     margin: 0;
+    background-color: transparent;
+}
+.portaltype-collection.section-accueil #content header {
+    display: none;
 }
 .portaltype-collection.section-accueil #content-core {
   margin:0;
@@ -265,102 +302,153 @@ ul.portaltabs li.selected{
     background-color: #fff;
     color: #1076ca;
 }
+/*A PROPOS*/
+.portaltype-document.section-apropos #content-core {
+    color: #1076ca;
+}
 /*SERVICES*/
+.portaltype-folder.section-services #content-core a {
+    color: #1076ca;
+}
 .portaltype-folder.section-services #content-core article {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 33.333%;
+}
+.portaltype-folder.section-services #content-core article:after {
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    padding-bottom: 100%;
+    top: 0;
+    width: 100%;
+}
+.portaltype-folder.section-services #content-core article:after {
+}
+.portaltype-folder.section-services #content-core article .contentItem {
     background-color: #fff;
     color: #1076ca;
-    float: left;
-    margin: 0;
-    position: relative;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    transition: color 0.5s, background-color 0.5s;
+}
+.portaltype-folder.section-services #content-core article:nth-child(2n) .contentItem {
+    background-color: #ccc;
+    color: #fff;
+}
+.portaltype-folder.section-services #content-core article:hover .contentItem {
+    background-color: #1076ca;
+    color: #fff;
+    transition: color 0.5s, background-color 0.5s;
+}
+.portaltype-folder.section-services #content-core article .tileHeader {
+    position: absolute;
     width: 100%;
 }
 .portaltype-folder.section-services #content-core article .tileImage {
-    background-color: #fff;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    border: 2px solid;
+    border-radius: 100%;
+    margin-bottom: 15%;
+    margin-left: 40%;
+    margin-top: 25%;
+    padding-bottom: 20%;
     position: absolute;
-    top: 0;
-    width: 50%;
-    z-index: 2;
-    margin-left: 0;
-    transition: margin-left 1s ease 0s;
+    width: 20%;
+    transition: width 0.5s, padding-bottom 0.5s, margin-top 0.5s, margin-left 0.5s, filter 0.5s;
 }
-.portaltype-folder.section-services #content-core article:nth-child(2) .tileImage {
-    margin-left: 50%;
-    transition: margin-left 1s ease 0s;
+.portaltype-folder.section-services #content-core article:nth-child(4n+1) .tileImage {
+    animation-name: heart;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
 }
-.portaltype-folder.section-services #content-core article:hover .tileImage{
-    margin-left: 50%;
-    transition: margin-left 1s ease 0s;
+.portaltype-folder.section-services #content-core article:nth-child(4n+3) .tileImage {
+    animation-name: rotate;
+    animation-delay: 3s;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
 }
-.portaltype-folder.section-services #content-core article:nth-child(2):hover .tileImage{
-    margin-left: 0;
-    transition: margin-left 1s ease 0s;
+.portaltype-folder.section-services #content-core article:nth-child(2n) .tileImage {
+    filter: brightness(200%) saturate(0);
 }
-.portaltype-folder.section-services #content-core article a {
-    color: #1076ca;
- }
-.portaltype-folder.section-services #content-core article .contentItem {
-    padding-bottom: 10%;
-    padding-top: 10%;
+.portaltype-folder.section-services #content-core article:hover .tileImage {
+    filter: none;
+    margin-left: 42.5%;
+    margin-top: 20%;
+    padding-bottom: 15%;
+    width: 15%;
+    transition: width 0.5s, padding-bottom 0.5s, margin-top 0.5s, margin-left 0.5s, filter 0.5s;
 }
-.portaltype-folder.section-services #content-core article .tileHeader {
-    margin-left: 50%;
+@keyframes heart {
+    0%   {transform: scale(1)}
+    1%   {transform: scale(1.3)}
+    2%   {transform: scale(1)}
+    3%   {transform: scale(1.4)}
+    4%   {transform: scale(1)}
+    100% {transform: scale(1)}
 }
-.portaltype-folder.section-services #content-core article:nth-child(2) .tileHeader {
-    margin-left: 0;
-    margin-right: 50%;
+@keyframes rotate {
+    0%   {transform: rotateY(0deg)}
+    4%   {transform: rotateY(90deg)}
+    8%   {transform: rotateY(180deg)}
+    12%   {transform: rotateY(270deg)}
+    16%   {transform: rotateY(360deg)}
+    100% {transform: rotateY(360deg)}
 }
-.portaltype-folder.section-services #content-core article .tileBody,
+.portaltype-folder.section-services #content-core article .tileHeader h2 {
+    font-size: 30px;
+    margin-top: 60%;
+    transition: margin-top 0.5s;
+}
+.portaltype-folder.section-services #content-core article:hover .tileHeader h2 {
+    margin-top: 40%;
+    transition: margin-top 0.5s;
+}
+.portaltype-folder.section-services #content-core article .tileBody {
+    margin-top: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: margin-top 0.5s ease 0s, opacity 0.5s ease 0s;
+    width: 100%;
+}
+.portaltype-folder.section-services #content-core article:hover .tileBody {
+    margin-top: 60%;
+    opacity: 1;
+    transition: margin-top 0.5s, opacity 0.5s;
+}
 .portaltype-folder.section-services #content-core article .tileFooter {
-    margin-right: 50%;
+    margin-top: 130%;
+    opacity: 0;
+    position: absolute;
+    transition: margin-top 0.5s ease 0s, opacity 0.5s ease 0s;
+    width: 100%;
 }
-.portaltype-folder.section-services #content-core article:nth-child(2) .tileBody,
-.portaltype-folder.section-services #content-core article:nth-child(2) .tileFooter {
-    margin-right: 0;
-    margin-left: 50%;
+.portaltype-folder.section-services #content-core article:hover .tileFooter {
+    margin-top: 90%;
+    opacity: 1;
+    transition: margin-top 0.5s, opacity 0.5s;
+}
+@media (max-width: 1200px) {
+    .portaltype-folder.section-services #content-core article {
+        width: 100%;
+    }
 }
 /*CONTACT*/
 .portaltype-document.section-contact #content {
-    margin: 0 20%;
-    max-width: 100%;
-    min-height: 100%;
     padding-bottom: 0;
     position: relative;
     z-index: 3;
 }
-.portaltype-document.section-contact header {
+.portaltype-document.section-contact #content header {
     background-color: rgba(255, 255, 255, 0.9);
-    color: #1076ca;
-    padding: 10% 10% 0;
-    position: relative;
-    z-index: 3;
-}
-.portaltype-document.section-contact header .description {
-    border-bottom: 1px solid #999;
-    border-top: 1px solid #999;
-    font-size: 30px;
-    font-weight: 400;
-    padding: 5% 0;
-}
-.portaltype-document.section-contact header .description:before {
-    content: "“";
-    font-family: arial;
-    font-size: 60px;
-    font-weight: 900;
-    margin-left: -40px;
-    margin-top: -10px;
-    position: absolute;
-}
-.portaltype-document.section-contact header .description:after {
-    content: "”";
-    font-family: arial;
-    font-size: 60px;
-    font-weight: 900;
-    margin-left: 10px;
-    margin-top: 20px;
-    position: absolute;
 }
 .portaltype-document.section-contact #adresse h2 {
     color: #1076ca;
@@ -472,15 +560,15 @@ ul.portaltabs li.selected{
     transform: translate3d(0px, 0px, 0px);
 }
 /*REFERENCES COLLECTION*/
+.template-clientfolderview #content {
+    box-shadow: none;
+    background-color: transparent;
+}
+.template-clientfolderview #content header{
+    color: #fff;
+}
 .template-clientfolderview #content-core {
-    height:auto;
-    overflow: hidden;
-    top:0px;
-    left:0px;
-    width: 80%;
     margin:0px auto;
-    position: relative;
-    text-align:center;
 }
 .template-clientfolderview #content-core article {
     background: #fff none repeat scroll 0 0;
@@ -597,13 +685,10 @@ ul.portaltabs li.selected{
 }
 /*REFERENCES ITEM*/
 .template-clientview #content {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 5%;
+    background-color: #fff;
 }
 .template-clientview article {
-    padding: 2%;
-    background-color: #fff;
+    padding: 5% 2%;
     color: #999;
     font-size: 18px;
 }
@@ -701,13 +786,14 @@ ul.portaltabs li.selected{
 }
 /*EQUIPE COLLECTION*/
 .template-zaffolderview #content-core {
-    height: auto;
-    left: 0;
-    margin: 0 auto;
     overflow: hidden;
-    position: relative;
-    text-align: center;
-    top: 0;
+}
+.template-zaffolderview #content {
+    background-color: transparent;
+    box-shadow: none;
+}
+.template-zaffolderview #content header {
+    color: #fff;
 }
 .template-zaffolderview #content-core article {
     background: #fff none repeat scroll 0 0;
@@ -772,12 +858,8 @@ ul.portaltabs li.selected{
 }
 /*EQUIPE INDIVIDUEL*/
 .template-zafview #content article {
-    background: #fff none repeat scroll 0 0;
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     color: #1076ca;
-    margin: 10%;
-    padding: 10%;
-    max-width: 60%;
+    padding: 20% 10% 0;
 }
 .template-zafview #content #zaf-boyz-description .tileImage {
     background-repeat: no-repeat;
