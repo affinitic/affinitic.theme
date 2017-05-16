@@ -23,7 +23,7 @@ $(document).ready(function(){
         el_offset_top = el.offset().top;
         el_offset_bottom = (el_offset_top + el.outerHeight());
         var docScroll = $window.scrollTop();
-        position = docScroll + (window_height/1.2);
+        position = docScroll + (window_height/1.1);
         class_el = get_style_no_view(el);
         if( (position >= el_offset_top) && (docScroll <= el_offset_bottom) ){
             el.addClass('in-view');
@@ -42,10 +42,26 @@ $(document).ready(function(){
             return 'no-view-right'
         }
     }
+    function change_style_button(scrolled) {
+        $('.button_home').each( function(){
+            href = $(this).attr('href');
+            slide = $(href);
+            slide_top = slide.offset().top - (window_height/4);
+            slide_height = slide.outerHeight();
+            slide_bottom = slide_top + slide_height;
+            if ( scrolled > slide_top  && scrolled < slide_bottom ){
+                $(this).addClass('selected');
+            }
+            else{
+                $(this).removeClass('selected');
+            }
+        });
+    }
 
 
 //    ACCUEIL
     $('#slides_home').each(function() {
+        change_style_button(0);
         $(this).find('article').each(function() {
             $(this).css('height', window_height);
         });
@@ -69,35 +85,22 @@ $(document).ready(function(){
         }
         lastScrollTop = scrolled;
 
-        var articles = document.getElementsByClassName("tileItem");
-        var i;
-        for (i = 0; i < articles.length; i++) {
-            article = articles[i];
-            article_top = article.offsetTop;
-            article_height = article.offsetHeight;
+        $('#slides_home').find('article').each(function() {
+            article = $(this);
+            article_top = $(this).offset().top;
+            article_height = article.outerHeight();
             article_bottom = article_top + article_height;
-
             visible = scrolled - article_top;
             pourcent = (visible * 100) / article_height;
-            front = document.getElementById('front_' + article.id);
-            front.style.top = - pourcent + '%';
-            back = document.getElementById('back_' + article.id);
-            back.style.top = - (pourcent / 1.2) + '%';
-        }
+            article.find('.Front').each(function() {
+                $(this).css('top', - (pourcent / 2) + '%');
+            })
+            article.find('.Back').each(function() {
+                $(this).css('top', - (pourcent / 4) + '%');
+            })
+        });
 
-//        $('#slides_home').find('article').each(function() {
-//            article = $(this);
-//            article_top = $(this).offset().top;
-//            article_height = article.outerHeight();
-//            article_bottom = article_top + article_height;
-//            visible = scrolled - article_top;
-//            pourcent = (visible * 100) / article_height;
-//            article.find('.Front').each(function() {
-//                $(this).css('top', - (pourcent * 2) + '%');
-//            })
-//            article.find('.Back').each(function() {
-//                $(this).css('top', - (pourcent * 4) + '%');
-//            })
-//        });
+        change_style_button(scrolled);
+
     });
 });

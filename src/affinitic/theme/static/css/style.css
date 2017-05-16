@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Avenir';
+    font-size: 18px;
     font-style: normal;
     font-weight: 200;
     color: #fff;
@@ -32,7 +33,7 @@ h2 {
     background-image: url("../images/background.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     background-size: cover;
     position: fixed;
     top: 0;
@@ -156,10 +157,14 @@ ul.portaltabs li.selected{
     }
 }
 /* CONTENT */
+.content {
+    background-color: rgba(255, 255, 255, 0.3);
+}
 #content {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 20%;
+    color: #1076ca;
+    margin: 0 15%;
     max-width: 100%;
     min-height: 100%;
     padding-bottom: 10%;
@@ -167,9 +172,12 @@ ul.portaltabs li.selected{
 }
 header {
     color: #1076ca;
-    padding: 10% 10% 5%;
+    padding: 15% 10% 5%;
     position: relative;
     z-index: 3;
+}
+header h1 {
+    display: none;
 }
 header .description {
     border-bottom: 1px solid #999;
@@ -210,13 +218,12 @@ header .description:after {
 .portaltype-collection.section-accueil #content header {
     display: none;
 }
-.portaltype-collection.section-accueil #content-core {
-  margin:0;
-  padding:0;
+.portaltype-collection.section-accueil #content-core #intro {
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .portaltype-collection.section-accueil #content-core article {
     color: #fff;
-    overflow: hidden;
     padding-top: 10%;
     position: relative;
 }
@@ -229,18 +236,31 @@ header .description:after {
 }
 .portaltype-collection.section-accueil #content-core .button_home {
     background-color: #fff;
+    border: 2px solid #fff;
     border-radius: 100%;
     display: block;
     height: 20px;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    opacity: 0.8;
     transition: background-color 0.5s ease 0s;
     width: 20px;
 }
-.portaltype-collection.section-accueil #content-core #button_home:hover {
+.portaltype-collection.section-accueil #content-core .button_home:hover {
     background-color: #1076ca;
     transition: background-color 0.5s;
+}
+.portaltype-collection.section-accueil #content-core .button_home.selected {
+    background-color: transparent;
+}
+.portaltype-collection.section-accueil #content-core .fleche {
+    background-image: url("../images/fleche_bottom.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    padding-top: 5%;
+    width: 5%;
 }
 .portaltype-collection.section-accueil #content-core article .contentItem {
     position: relative;
@@ -252,6 +272,9 @@ header .description:after {
     margin-bottom: 2%;
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
+}
+.portaltype-collection.section-accueil #content-core #intro h1 {
+    margin-top: 0;
 }
 .portaltype-collection.section-accueil #content-core article h1,
 .portaltype-collection.section-accueil #content-core article a:hover {
@@ -286,7 +309,7 @@ header .description:after {
     opacity: 0.5;
     z-index: 2;
 }
-.portaltype-collection.section-accueil #content-core article:nth-child(2) .tileImage.BackgroundColor {
+.portaltype-collection.section-accueil #content-core article:nth-child(2n+1) .tileImage.BackgroundColor {
     background-color: rgba(255, 255, 255, 0.3);
     height: 90%;
     z-index: 1;
@@ -301,10 +324,6 @@ header .description:after {
 }
 .portaltype-collection.section-accueil #content-core article a .tileFooter:hover {
     background-color: #fff;
-    color: #1076ca;
-}
-/*A PROPOS*/
-.portaltype-document.section-apropos #content-core {
     color: #1076ca;
 }
 /*SERVICES*/
@@ -340,13 +359,8 @@ header .description:after {
     transition: color 0.5s, background-color 0.5s;
 }
 .portaltype-folder.section-services #content-core article:nth-child(2n) .contentItem {
-    background-color: #ccc;
-    color: #fff;
-}
-.portaltype-folder.section-services #content-core article:hover .contentItem {
     background-color: #1076ca;
     color: #fff;
-    transition: color 0.5s, background-color 0.5s;
 }
 .portaltype-folder.section-services #content-core article .tileHeader {
     position: absolute;
@@ -377,16 +391,12 @@ header .description:after {
     animation-duration: 6s;
     animation-iteration-count: infinite;
 }
-.portaltype-folder.section-services #content-core article:nth-child(2n) .tileImage {
-    filter: brightness(200%) saturate(0);
-}
 .portaltype-folder.section-services #content-core article:hover .tileImage {
-    filter: none;
     margin-left: 42.5%;
     margin-top: 20%;
     padding-bottom: 15%;
     width: 15%;
-    transition: width 0.5s, padding-bottom 0.5s, margin-top 0.5s, margin-left 0.5s, filter 0.5s;
+    transition: width 0.5s, padding-bottom 0.5s, margin-top 0.5s, margin-left 0.5s;
 }
 @keyframes heart {
     0%   {transform: scale(1)}
@@ -421,7 +431,7 @@ header .description:after {
     width: 100%;
 }
 .portaltype-folder.section-services #content-core article:hover .tileBody {
-    margin-top: 60%;
+    margin-top: 55%;
     opacity: 1;
     transition: margin-top 0.5s, opacity 0.5s;
 }
@@ -519,7 +529,7 @@ header .description:after {
     margin-right: 5%;
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 45%;
     width: 40%;
     z-index: 4;
 }
@@ -561,16 +571,6 @@ header .description:after {
     transform: translate3d(0px, 0px, 0px);
 }
 /*REFERENCES COLLECTION*/
-.template-clientfolderview #content {
-    box-shadow: none;
-    background-color: transparent;
-}
-.template-clientfolderview #content header{
-    color: #fff;
-}
-.template-clientfolderview #content-core {
-    margin:0px auto;
-}
 .template-clientfolderview #content-core article {
     background: #fff none repeat scroll 0 0;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
@@ -685,13 +685,9 @@ header .description:after {
     transition: opacity 1s ease 0s, bottom 1s ease 0s;
 }
 /*REFERENCES ITEM*/
-.template-clientview #content {
-    background-color: #fff;
-}
 .template-clientview article {
     padding: 5% 2%;
     color: #999;
-    font-size: 18px;
 }
 .template-clientview article a,
 .template-clientview article a:hover {
@@ -789,20 +785,12 @@ header .description:after {
 .template-zaffolderview #content-core {
     overflow: hidden;
 }
-.template-zaffolderview #content {
-    background-color: transparent;
-    box-shadow: none;
-}
-.template-zaffolderview #content header {
-    color: #fff;
-}
 .template-zaffolderview #content-core article {
     background: #fff;
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
-    color: #1076ca;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     display: inline-block;
     margin: 2%;
-    min-height: 250px;
+    min-height: 300px;
     overflow: hidden;
     padding: 2%;
     position: relative;
@@ -813,30 +801,28 @@ header .description:after {
     background: #1076ca;
     color: #fff;
 }
-.template-zaffolderview #content-core article:hover .tileFooter {
-    visibility: visible;
-}
 @media (max-width: 1200px) {
     .template-zaffolderview #content-core article {
         width: 90%;
     }
 }
-.template-zaffolderview #content-core article:last-child:after{
-    content: "";
-    clear : both;
-}
 .template-zaffolderview #content-core article a {
     color: #1076ca;
-    transition: color 1s;
+    transition: color 0.5s;
 }
 .template-zaffolderview #content-core article:hover a {
     color: #fff;
-    transition: color 1s;
+    transition: color 0.5s;
 }
 .template-zaffolderview #content-core article h2 {
     margin-bottom: 0;
     margin-top: 5%;
+    transition: margin-top 0.5s;
  }
+.template-zaffolderview #content-core article:hover h2 {
+    margin-top: 5%;
+    transition: margin-top 0.5s;
+}
 .template-zaffolderview #content-core article .tileImage {
     background-repeat: no-repeat;
     background-size: cover;
@@ -848,115 +834,129 @@ header .description:after {
     overflow: hidden;
     padding-bottom: 35%;
     width: 35%;
-    transition: width 1s, padding-bottom 1s, opacity 1s;
+    transition: width 0.5s, padding-bottom 0.5s, opacity 0.5s;
 }
 .template-zaffolderview #content-core article:hover .tileImage {
     opacity: 0;
     padding-bottom: 0%;
     width: 0%;
-    transition: width 1s, padding-bottom 1s, opacity 1s;
-}
-.template-zaffolderview #content-core article .tileMail {
-    margin-top: 5%;
+    transition: width 0.5s, padding-bottom 0.5s, opacity 0.5s;
 }
 .template-zaffolderview #content-core article .tileBody {
     left: 0;
-    position: absolute;
-    width: 100%;
     margin-top: 100%;
-    top: 0;
-    transition: margin-top 1s;
-}
-.template-zaffolderview #content-core article .tileMail {
-    left: 0;
+    padding-left: 5%;
+    padding-right: 5%;
     position: absolute;
-    width: 100%;
-    margin-top: 100%;
-    top: 0;
-    transition: margin-top 1s;
+    transition: margin-top 0.5s ease 0s;
+    width: 90%;
 }
+
 .template-zaffolderview #content-core article:hover .tileBody {
-    margin-top: 35%;
-    transition: margin-top 1s;
+    margin-top: 5%;
+    transition: margin-top 0.5s;
 }
-.template-zaffolderview #content-core article:hover .tileMail {
-    margin-top: 45%;
-    transition: margin-top 1s;
+.template-zaffolderview #content-core article .tileBody .mail {
+    margin-top: 5%;
 }
 .template-zaffolderview #content-core article .tileFooter {
-    bottom: 5%;
-    clear: both;
+    bottom: -100%;
+    left: 0;
     position: absolute;
-    right: 5%;
-    text-align: right;
-    visibility: hidden;
+    right: 0;
+    transition: bottom 0.5s ease 0s;
+}
+.template-zaffolderview #content-core article:hover .tileFooter {
+    bottom: 5%;
+    transition: bottom 0.5s;
+}
+.template-zaffolderview #content-core article .tileFooter .img {
+    background-size: cover;
+    border: 2px solid #1076ca;
+    border-radius: 100%;
+    content: "";
+    display: inline-block;
+    top: 50%;
+    padding-top: 8%;
+    width: 8%;
+}
+.template-zaffolderview #content-core article .tileFooter .img.github {
+    background-image: url("../images/icones/bleu_github.gif");
+}
+.template-zaffolderview #content-core article .tileFooter .img.twitter {
+    background-image: url("../images/icones/bleu_twitter.gif");
+}
+.template-zaffolderview #content-core article .tileFooter .img:hover {
+    border: 2px solid #fff;
 }
 /*EQUIPE INDIVIDUEL*/
-.template-zafview #content article {
-    color: #1076ca;
-    padding: 20% 10% 0;
+.template-zafview header {
+    padding: 10% 10% 5%;
 }
-.template-zafview #content #zaf-boyz-description .tileImage {
+.template-zafview #content {
+    color: #1076ca;
+    padding: 5% 2%;
+}
+.template-zafview #content .title {
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+    padding-bottom: 2%;
+}
+.template-zafview #content .date {
+    color: #999;
+    margin-top: 2%;
+}
+.template-zafview #content .tileImage {
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 100%;
+    border: 10px solid #fff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
     float: left;
+    left: 10%;
+    margin-right: 5%;
     overflow: hidden;
-    padding-bottom: 10%;
-    position: absolute;
-    width: 10%;
+    padding-bottom: 25%;
+    transform: rotate(-10deg);
+    width: 25%;
 }
-.template-zafview #content article h1 {
-    font-size: 3em;
-    font-weight: 900;
-    margin: 0 0 0 30%;
-    text-align: center;
-    text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-}
-.template-zafview #content article h2 {
-    font-size: 1.3em;
-    font-weight: 500;
-    margin-bottom: 0;
-    margin-left: 30%;
-    margin-top: 1%;
-}
-.template-zafview #content article .date {
-    color: #999;
-    margin-left: 30%;
-    text-align: center;
-}
-.template-zafview #content article #description {
-    margin-top: 10%;
+.template-zafview #content #description {
+    margin-bottom: 10%;
+    padding: 5%;
     text-align: left;
-    width: 100%;
 }
-.template-zafview #content article #description div {
+.template-zafview #content #description_left {
+    float: left;
+    width: 40%;
+    position: relative;
 }
-.template-zafview #content article #contact {
-    position: absolute;
-    width: 20%;
-}
-.template-zafview #content article #contact a {
+.template-zafview #content #description_left a {
     color: #1076ca;
 }
-.template-zafview #content article #experience {
-    display: inline-block;
-    margin-left: 40%;
+.template-zafview #content .img {
+    height: 25px;
+    margin-left: 45px;
+    margin-top: 20px;
 }
-@media (max-width: 1200px) {
-    .template-zafview #content article {
-        max-width: 95%;
-    }
-    .template-zafview #content article h1 {
-        font-size: 2em;
-    }
-    .template-zafview #content article #contact {
-        position: relative;
-        width: 100%;
-    }
-    .template-zafview #content article #experience {
-        width: 100%;
-        margin-left: 0;
-    }
+.template-zafview #content .img:before {
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    left: 0;
+    margin-top: -5px;
+    padding-bottom: 40px;
+    position: absolute;
+    width: 40px;
+}
+.template-zafview #content .img.mail:before {
+    background-image: url("../images/icones/bleu_mail.gif");
+}
+.template-zafview #content .img.github:before {
+    background-image: url("../images/icones/bleu_github.gif");
+}
+.template-zafview #content .img.twitter:before {
+    background-image: url("../images/icones/bleu_twitter.gif");
+}
+.template-zafview #content #description_right {
+    margin-left: 40%;
 }
