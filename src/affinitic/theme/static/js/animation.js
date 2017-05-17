@@ -10,38 +10,39 @@ $(document).ready(function(){
     var window_width = $window.width();
 
     $('.template-zaffolderview').each(function() {
+        $('#content-core').find('article').each(function() {
+            add_style($(this), 0);
+        })
         $window.scroll(function(){
             $('#content-core').find('article').each(function() {
-                class_el = get_style_no_view($(this));
-                $(this).addClass(class_el);
-                add_style($(this));
+                var docScroll = $window.scrollTop();
+                add_style($(this), docScroll);
             })
         });
     });
 
-    function add_style(el) {
+    function add_style(el, docScroll) {
         el_offset_top = el.offset().top;
         el_offset_bottom = (el_offset_top + el.outerHeight());
-        var docScroll = $window.scrollTop();
-        position = docScroll + (window_height/1.1);
-        class_el = get_style_no_view(el);
+        position = docScroll + (window_height/1.5);
         if( (position >= el_offset_top) && (docScroll <= el_offset_bottom) ){
             el.addClass('in-view');
         }
         else {
-            el.addClass(class_el).removeClass('in-view');
+            el.removeClass('in-view');
         }
     }
-    function get_style_no_view(el) {
-        el_offset_left = el.offset().left;
-        middle = window_width / 2;
-        if (el_offset_left < middle){
-            return 'no-view-left'
-        }
-        else {
-            return 'no-view-right'
-        }
-    }
+//    Fonction qui permet de savoir si l'élément est placé à gauche ou à droite
+//    function get_style_no_view(el) {
+//        el_offset_left = el.offset().left;
+//        middle = window_width / 2;
+//        if (el_offset_left < middle){
+//            return 'no-view-left'
+//        }
+//        else {
+//            return 'no-view-right'
+//        }
+//    }
     function change_style_button(scrolled) {
         $('.button_home').each( function(){
             href = $(this).attr('href');
