@@ -24,7 +24,7 @@ $(document).ready(function(){
     function add_style(el, docScroll) {
         el_offset_top = el.offset().top;
         el_offset_bottom = (el_offset_top + el.outerHeight());
-        position = docScroll + (window_height/1.5);
+        position = docScroll + (window_height/1.3);
         if( (position >= el_offset_top) && (docScroll <= el_offset_bottom) ){
             el.addClass('in-view');
         }
@@ -63,8 +63,12 @@ $(document).ready(function(){
 //    ACCUEIL
     $('#slides_home').each(function() {
         change_style_button(0);
+        i=0;
         $(this).find('article').each(function() {
+            i++;
             $(this).css('height', window_height);
+            $(this).attr('id', i);
+            $('#buttons_home').append('<a href="#' + i + '" class="button_home">');
         });
     });
     $('.button_home').click(function(){
@@ -94,10 +98,10 @@ $(document).ready(function(){
             visible = scrolled - article_top;
             pourcent = (visible * 100) / article_height;
             article.find('.Front').each(function() {
-                $(this).css('top', - (pourcent / 2) + '%');
+                $(this).css('top', - (pourcent * 1) + '%');
             })
             article.find('.Back').each(function() {
-                $(this).css('top', - (pourcent / 4) + '%');
+                $(this).css('top', + (pourcent * 1.3) + '%');
             })
         });
 
