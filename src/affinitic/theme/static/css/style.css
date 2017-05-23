@@ -33,6 +33,49 @@ h2 {
     font-weight: 400;
     padding-bottom: 5%;
 }
+.languages {
+    height: 150px;
+    position: fixed;
+    right: 20px;
+    padding-top: 40px;
+    top: 100px;
+    width: 50px;
+}
+.language {
+    background-size: cover;
+    background-image: url("../images/comment_hover.png");
+    color: #1076ca;
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    height: 30px;
+    line-height: 1.7;
+    padding: 3px;
+    position: relative;
+    text-align: center;
+    width: 30px;
+    transition: margin-top 0.5s;
+    transform: scale(0, 0);
+    transition: transform 0.5s;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.language.selected {
+    background-image: url("../images/comment_white.png");
+    color: #1076ca;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    transform: scale(1, 1);
+}
+.languages:hover .language {
+    transform: scale(1, 1);
+    transition: transform 0.5s;
+}
+.languages:hover .language:hover {
+    background-image: url("../images/comment_blue.png");
+    color: #fff;
+}
 /* NAVBAR */
 .navbar {
     background-image: url("../images/background.jpg");
