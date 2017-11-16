@@ -1,0 +1,3 @@
+<div class="languageselector" tal:define="response view/button">
+    <span tal:content="response" class="button_response" />
+</div>

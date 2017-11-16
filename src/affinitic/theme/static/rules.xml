@@ -4,7 +4,7 @@
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <theme href="base.html" />
+    <theme href="templates/index.html" />
 
     <notheme css:if-not-content="#visual-portal-wrapper" />
 
@@ -21,6 +21,11 @@
         <!-- Don't use Plone icons, use the theme's -->
         <drop css:content="head link[rel='apple-touch-icon']" />
         <drop css:content="head link[rel='shortcut icon']" />
+        <!-- CSS -->
+        <before css:theme-children="head" css:content="head link" />
+        <before css:theme-children="head" css:content="head style" />
+<!--         Script -->
+        <before css:theme-children="head" css:content="head script" />
     </rules>
 
     <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
@@ -34,5 +39,14 @@
 
     <!-- Content body -->
     <replace css:content="#content" css:theme=".content_body" />
+
+    <!-- Content body -->
+    <replace css:content="#portal-languageselector" css:theme-children="#portal-languages" />
+    <drop css:theme="#portal-languageselector" />
+
+    <!-- toolbar -->
+    <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
+    <drop css:theme="#portal-toolbar" css:if-content=".userrole-anonymous" />
+    <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
 
 </rules>

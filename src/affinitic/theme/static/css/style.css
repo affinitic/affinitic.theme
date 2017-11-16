@@ -25,14 +25,32 @@ li {
 }
 h2 {
     font-weight: 400;
-/*    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);*/
 }
+.content {
+    padding: 100px 0;
+}
+.userrole-authenticated .content{
+    width: calc(100% - 120px);
+    margin-left: 120px;
+}
+/*TOOLBAR*/
+#edit-zone {
+    z-index: 1000 !important;
+}
+.plone-toolbar-left-expanded {
+    padding-left: 0;
+}
+#edit-zone .scroll-btn{
+    width: 120px;
+}
+
+
 .intro {
     font-size: 30px;
     font-weight: 400;
     padding-bottom: 5%;
 }
-.languages {
+#portal-languageselector {
     height: 150px;
     position: fixed;
     right: 20px;
@@ -40,7 +58,7 @@ h2 {
     top: 100px;
     width: 50px;
 }
-.language {
+#portal-languageselector li {
     background-size: cover;
     background-image: url("../images/comment_hover.png");
     color: #1076ca;
@@ -59,7 +77,7 @@ h2 {
     cursor: pointer;
     transition: transform 0.5s;
 }
-.language.selected {
+#portal-languageselector li.currentLanguage {
     background-image: url("../images/comment_white.png");
     color: #1076ca;
     position: absolute;
@@ -67,11 +85,11 @@ h2 {
     z-index: 2;
     transform: scale(1, 1);
 }
-.languages:hover .language {
+#portal-languageselector:hover li {
     transform: scale(1, 1);
     transition: transform 0.5s;
 }
-.languages:hover .language:hover {
+#portal-languageselector:hover li:hover {
     background-image: url("../images/comment_blue.png");
     color: #fff;
 }
@@ -85,6 +103,10 @@ h2 {
     top: 0;
     right: 0;
     width: 100%;
+    z-index: 6;
+}
+.userrole-authenticated .navbar{
+    width: calc(100% - 120px);
     z-index: 6;
 }
 .navbar a {
@@ -166,26 +188,29 @@ ul.portaltabs li.selected{
     background: #7f8c8d none repeat scroll 0 0;
     bottom: 0;
     color: #bec4c5;
-    display: block;
+    display: flex;
     padding: 1em;
     position: fixed;
     text-align: center;
     width: calc(100% - 2em);
     z-index: 5;
-    columns: 3;
     margin: 0;
     font-size: 14px;
+    right: 0;
+}
+.userrole-authenticated .footerbar{
+    width: calc(100% - 2em - 120px);
 }
 .footer_text_left{
     text-align: left;
-    display: inline-block
+    width: 40%;
 }
 .footer_text_right{
     text-align: right;
-    display: inline-block
+    width: 40%;
 }
 .footer_icone_center{
-    display: inline-block
+    width: 20%;
 }
 .footer_icone_size{
     height: 30px;
@@ -195,8 +220,8 @@ ul.portaltabs li.selected{
     .footer_text_left, .footer_text_right {
         display: none;
     }
-    .footerbar{
-        columns: 1;
+    .footer_icone_center{
+        width: 100%;
     }
 }
 /* CONTENT COMMUN */
