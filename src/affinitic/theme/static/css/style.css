@@ -36,6 +36,9 @@ h2 {
 #edit-zone .scroll-btn{
     width: 120px;
 }
+i.link-external::after {
+    content: "";
+}
 
 
 .intro {
