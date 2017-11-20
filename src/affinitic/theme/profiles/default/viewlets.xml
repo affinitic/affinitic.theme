@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<viewlets>
-
-    <order manager="languageviewlet" skinname="Affinitic Theme">
-        <viewlet name="languageselector" />
-    </order>
-
-</viewlets>

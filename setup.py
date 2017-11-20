@@ -28,5 +28,6 @@ setup(name='affinitic.theme',
       install_requires=[
           'setuptools',
           'plone.app.themingplugins',
+          'z3c.jbot',
           # -*- Extra requirements: -*-
       ])

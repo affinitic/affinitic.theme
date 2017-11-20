@@ -4,27 +4,15 @@
     xmlns:plone="http://namespaces.plone.org/plone">
 
     <include file="profiles.zcml" />
+    <include package="z3c.jbot" file="meta.zcml" />
 
     <plone:static
         type="theme"
         directory="static"
         name="affinitic.theme" />
 
-    <browser:viewletManager
-        name="languageviewlet"
-        provides="plone.app.layout.viewlets.interfaces.IPortalHeader"
-        permission="zope2.View"
-        class="plone.app.viewletmanager.manager.OrderedViewletManager"
-        />
+    <browser:jbot
+        directory="./static/overrides"
+            layer="affinitic.theme.interfaces.ICustomTheme" />
 
-    <browser:viewlet
-        name="languageselector"
-        for="*"
-        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
-        layer=".interfaces.ICustomTheme"
-        template="static/templates/languages.pt"
-        class="affinitic.theme.viewlets.LanguageSelector"
-        permission="zope2.View"
-        />
-
-</configure>
+        </configure>

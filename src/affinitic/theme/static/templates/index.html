@@ -3,13 +3,13 @@
     <head>
         <title></title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
         <link rel="stylesheet" href="css/style.css" />
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/animation.js"></script>
     </head>
 
     <body>
-        <div class="body">
             <section id="portal-toolbar">
             </section>
 
@@ -23,18 +23,15 @@
                 </ul>
             </div>
 
-            <div class="content">
-<!--                <div replace="structure provider:languageviewlet"></div>-->
-
-
+            <section id="body-content">
                 <div class="content_body">
                 </div>
 
                 <div id="portal-languages">
                 </div>
-            </div>
+            </section>
 
-            <div class="footerbar">
+            <footer>
                 <div class="footer_text_left">
                     info@affinitic.be
                     <br>GSM (administratif) : + 32 (0) 485 62 67 75
@@ -42,9 +39,36 @@
                 </div>
 
                 <div class="footer_icone_center">
-                    <img src="images/facebook-icone.png" alt="" class="footer_icone_size" />
-                    <img src="images/twitter-icone.png" alt="" class="footer_icone_size" />
-                    <img src="images/RSS-icone-gris.png" alt="" class="footer_icone_size" />
+                    <a href="http://www.facebook.com/Affinitic" title="Affinitic Facebook">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="http://twitter.com/affinitic" title="Affinitic Twitter">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="http://www.linkedin.com/company/2709673/" title="Affinitic Linkedin">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="http://plus.google.com/114068655195334570692" title="Affinitic Google+">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-google-plus-official fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="http://blog.affinitic.be/" title="Affinitic Blog">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                 </div>
 
                 <div class="footer_text_right">
@@ -52,9 +76,6 @@
                     <br>B-1400 Nivelles - Belgique
                     <br>N° d'entreprise : 0882 564 990
                 </div>
-            </div>
-
-        </div>
-
+            </footer>
     </body>
 </html>
