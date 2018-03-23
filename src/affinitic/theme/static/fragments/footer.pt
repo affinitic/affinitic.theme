@@ -1,0 +1,74 @@
+<footer>
+    <tal:contact tal:repeat="brain view/getfooter">
+        <tal:item define="item brain/getObject">
+        <div class="contact">
+            <ul>
+                <li class="email">
+                    <a tal:attributes="href string:mailto:${email}" tal:define="email item/email" tal:condition="email" target="_blank">
+                        <span tal:content="item/email"></span>
+                    </a>
+                </li>
+                <li class="phone">
+                    <a tal:attributes="href string:tel:${phone}" tal:define="phone item/phone" tal:condition="phone" target="_blank">
+                        <span tal:content="item/phone"></span>
+                    </a>
+                </li>
+                <li class="gsm1">
+                    <a tal:attributes="href string:tel:${gsm1}" tal:define="gsm1 item/gsm1" tal:condition="gsm1" target="_blank">
+                        <span tal:content="item/gsm1"></span>
+                    </a>
+                </li>
+                <li class="gsm2">
+                    <a tal:attributes="href string:tel:${gsm2}" tal:define="gsm2 item/gsm2" tal:condition="gsm2" target="_blank">
+                        <span tal:content="item/gsm2"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="social_share">
+            <a tal:attributes="href item/facebook" target="_blank" title="Affinitic Facebook">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+            <a tal:attributes="href item/twitter" target="_blank" title="Affinitic Twitter">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+            <a tal:attributes="href item/linkedin" target="_blank" title="Affinitic Linkedin">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+            <a tal:attributes="href item/github" target="_blank" title="Affinitic Github">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </div>
+        <div class="adress">
+            <ul>
+                <li>
+                    <span tal:content="item/street"></span>
+                    <span tal:content="item/number"></span>
+                    <span tal:content="item/box"></span>
+                </li>
+                <li>
+                    <span tal:content="item/postalcode"></span>
+                    <span tal:content="item/city"></span>
+                    <span tal:content="item/country"></span>
+                </li>
+                <li>
+                    N° entreprise<span tal:content="item/tva"></span>
+                </li>
+            </ul>
+        </div>
+        </tal:item>
+    </tal:contact>
+</footer>

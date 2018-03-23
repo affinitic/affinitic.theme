@@ -31,11 +31,20 @@
     <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
     <copy attributes="*" css:content="body" css:theme="body" />
 
-    <!-- Logo link -->
-    <copy attributes="href" css:content="#portal-logo" css:theme="#logo .logo-link" />
-
     <!-- Navbar -->
     <replace css:content-children="#portal-globalnav" css:theme-children=".portaltabs" />
+
+    <!-- Logo link -->
+    <before css:theme-children=".portaltabs">
+        <li id="logo">
+            <xsl:apply-templates css:select="#portal-logo img">
+            </xsl:apply-templates>
+        </li>
+    </before>
+<!--    <copy attributes="src" css:content="#portal-logo img" css:theme="#logo"></copy>-->
+<!--    <xsl:template match="//div[@id='logo']">-->
+<!--        <xsl:attribute name="style">background-image:<xsl:value-of select="//a[@class='logo-link']/img/@src" /></xsl:attribute>-->
+<!--    </xsl:template>-->
 
     <!-- Content body -->
     <replace css:content="#content" css:theme=".content_body" />
@@ -48,5 +57,11 @@
     <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
     <drop css:theme="#portal-toolbar" css:if-content=".userrole-anonymous" />
     <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
+
+    <replace
+        css:theme="#footer"
+        css:content="footer"
+        href="/@@theme-fragment/footer"
+        />
 
 </rules>
