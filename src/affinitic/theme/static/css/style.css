@@ -5,15 +5,16 @@
  * Distributed under terms of the LICENCE.txt license.
  */
 /* GLOBAL */
+@font-face {
+    font-family: Avenir;
+    src: url(../fonts/AvenirLTStd-Book.otf);
+}
 body {
     margin: 0;
-    font-family: 'Avenir';
+    font-family: Avenir;
     font-size: 1em;
     font-style: normal;
     font-weight: 200;
-}
-@font-face {
-    src: local('AvenirLTStd-Book'), url('../fonts/AvenirLTStd-Book.otf') format('otf');
 }
 a {
     text-decoration: none;
@@ -139,6 +140,9 @@ body > section{
     padding-top: 4em;
     z-index: 1;
     width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #view_content {
     text-align: center;
