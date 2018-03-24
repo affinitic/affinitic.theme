@@ -17,7 +17,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: #1076ca;
+    color: #025A8F;
 }
 a:hover {
     color: #999;
@@ -28,7 +28,7 @@ h1 {
     text-align: center;
     font-weight: 200;
     text-transform: uppercase;
-    color: #1076ca;
+    color: #025A8F;
     margin-bottom: 0;
 }
 header .description,
@@ -46,6 +46,10 @@ h2 {
 }
 h6 {
     font-weight: normal;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
 }
 
 
@@ -76,10 +80,12 @@ body > nav {
 }
 body > nav .portaltabs {
     width: 100%;
-    display: inline-block;
+    display: flex;
     padding: 0;
     text-align: right;
     margin: 0;
+    justify-content: end;
+    align-items: center;
 }
 body > nav .portaltabs li{
     border: 2px solid transparent;
@@ -90,6 +96,7 @@ body > nav .portaltabs li{
     padding: 0 1.2em;
     text-transform: uppercase;
     display: inline-block;
+    text-align: center;
 }
 body > nav .portaltabs li a{
     color: #ffffff;
@@ -105,11 +112,22 @@ body > nav .portaltabs li:hover a {
 body > nav .portaltabs li.selected{
     border: 2px solid #fff;
 }
-#logo {
+#logo,
+#logo:hover {
     display: block;
     width: auto;
     height: auto;
     float: left;
+    background: transparent;
+    border: none;
+    justify-self: start;
+    margin-right: auto;
+}
+#logo img {
+    max-height: 50px;
+}
+#navigation{
+    display: none;
 }
 
 /* CONTENT */
@@ -210,17 +228,36 @@ footer li {
 footer .gsm2{
     display: none;
 }
-
-
-
 /* HOMEPAGE */
 body.template-homepage_view{
     background-image: url("../images/background.jpg");
     background-position: top;
     background-size: cover;
 }
+#homepage_view #shortcut {
+    position: fixed;
+    right: 1em;
+    height: 100%;
+    width: auto;
+    display: block;
+    z-index: 2;
+    margin-top: 10em;
+}
+#homepage_view #shortcut .button {
+    display: block;
+    content: "";
+    width: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    margin: 0.5em;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#homepage_view #shortcut .button:hover {
+    background: #1076ca;
+}
 #homepage_view h2{
-    padding: 0 0 1.5em 0;
+    padding: 0.5em 0;
     font-size: 2em;
 }
 #homepage_view .item {
@@ -240,33 +277,36 @@ body.template-homepage_view{
     perspective: 1px;
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 #homepage_view .group {
   position: relative;
   transform-style: preserve-3d;
   font-size: 20px;
-  height: 100%;
+  height: 200%;
   text-align: center;
 }
-#homepage_view .background {
+#homepage_view .group .background {
     transform: translateZ(-1px) scale(2.2);
+    -webkit-transform: translateZ(-1px) scale(2.2);
     height: auto;
     width: 100%;
     position: absolute;
     top: 0;
-    background: #FFF;
     padding: 5em 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 60%;
 }
-#homepage_view .foreground {
+#homepage_view .group .foreground {
     position: absolute;
     top: 0;
-    height: auto;
+    height: 100%;
     width: calc(100% - 8em);
-    background: rgba(16, 118, 202, 0.5);
-    padding: 4em;
+    padding: 2em 4em;
 }
-/*About*/
-#homepage_view #About .image {
+#homepage_view .group .image {
     width: 20%;
     padding-bottom: 20%;
     background-repeat: no-repeat;
@@ -274,118 +314,114 @@ body.template-homepage_view{
     background-size: contain;
     display: inline-block;
 }
-#homepage_view #About .foreground{
+#homepage_view .group li{
+    display: inline-block;
+    vertical-align: top;
+}
+#homepage_view .group .more {
+    border: 2px solid #025A8F;
+    border-radius: 25px;
+    padding: 0.2em 0.5em;
+    margin: 0.5em;
+    display: inline-block;
+}
+#homepage_view .group:nth-child(odd) .foreground {
+    background: rgba(16, 118, 202, 0.5);
+    height: auto;
+    color: #fff;
+}
+#homepage_view .group:nth-child(odd) h2,
+#homepage_view .group:nth-child(odd) a{
+    color: #fff;
+}
+#homepage_view .group:nth-child(even) .foreground {
+    background: #fff;
+    height: auto;
+}
+#homepage_view .group:first-child .foreground{
+    background: rgba(255, 255, 255, 0.5);
     height: 100%;
-    background: transparent;
 }
-#homepage_view #About .background{
-    background: transparent;
-}
-#homepage_view #About h2,
-#homepage_view #About .text{
-    margin-top: 0.5em;
+#homepage_view .group:first-child .foreground,
+#homepage_view .group:first-child a,
+#homepage_view .group:first-child h2{
     color: #025A8F;
 }
-/*Services*/
-#homepage_view #Services{
+#homepage_view #Number{
+    height: 50%;
+    top: -75%;
+    color: #fff;
+}
+#homepage_view #Number .foreground {
     height: 200%;
-}
-#homepage_view #Services .foreground{
-    background-color: #fff;
-    opacity: 1;
-}
-#homepage_view #Services .list {
-    display: flex;
-    justify-content: space-around;
-    margin: 0 4em;
-}
-#homepage_view #Services .list a{
-    color: #000;
-}
-#homepage_view #Services .list > div{
-    margin: 1em;
-    width: 19%;
-}
-#homepage_view #Services .list > div h6{
-    text-align: justify;
-}
-#homepage_view #Services .background{
     background-color: transparent;
-    height: 100%;
-}
-#homepage_view #Services .list .image {
-    width: 50%;
-    padding-bottom: 50%;
-    background-position: center;
-    background-size: contain;
+    padding: 0;
+    width: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    text-align: center;
-    display: inline-block;
+    background-position: top;
 }
-/*Open source*/
-#homepage_view #OpenSource .foreground {
-    opacity: 1;
-    background: #fff;
+#homepage_view #Number .background {
+    background-repeat: repeat;
+    background-position: top;
+    background-size: contain;
+    height: 100%;
+    padding: 0;
 }
-#homepage_view #OpenSource .background {
-    opacity: 0.3;
-}
-#homepage_view #OpenSource .image {
+#homepage_view #OpenSource .image{
     width: 10%;
     padding-bottom: 10%;
-    background-position: center;
+}
+#homepage_view #Contact {
+    height: 100%;
+}
+#homepage_view #Contact .foreground {
+    max-height: 60%;
+    background: #025A8F;
+    color: #fff;
+}
+#homepage_view .group:last-child {
+    height: 30%;
+}
+#homepage_view .group:last-child .foreground {
+    top: 50%;
+    background: #025A8F;
+    color: #fff;
+}
+#homepage_view #Contact h2,
+#homepage_view #Contact a,
+#homepage_view .group:last-child h2,
+#homepage_view .group:last-child a{
+    color: #fff;
+}
+#homepage_view .group .group_number {
+    margin: 0 3em;
+}
+
+#homepage_view .group .number {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.slideshow {
+    margin: 2em 0;
+}
+.slideshow .lSSlideOuter .lSPager.lSpg > li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+    margin-top: 2em;
+}
+.slideshow .image_slider {
+    width: 150px;
+    padding-bottom: 150px;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
     display: inline-block;
-    text-align: center;
 }
-/*Number*/
-#homepage_view #Number .foreground {
-    opacity: 1;
-    background: rgba(16, 118, 202, 0.5);
-    color: #fff;
-}
-#homepage_view #Number .group_number{
-    display: inline-block;
-    text-align: center;
-    margin: 0 1em;
-}
-#homepage_view #Number .number {
-    font-size: 2em;
-    font-weight: bold;
-}
-/*Contact*/
-#homepage_view #Contact .foreground{
-    background: rgba(16, 118, 202, 1);
-    top: calc(50% - 5em);
-}
-#homepage_view #Contact .foreground h2{
-    padding: 0;
-    color: #FFF;
-}
-#homepage_view #Contact .foreground h2:hover{
-    color: #333;
-}
-#homepage_view #Contact #map {
-    width: 100%;
-    height: 100%;
-    border: none;
-    margin: 0;
-}
-#homepage_view #Contact .background {
-    padding: 0;
-    height: 100%;
-}
-/*Share*/
-#homepage_view #Share .social_share {
-    padding-left: 0;
-}
-#homepage_view #Share .social_share li {
-    display: inline-block;
-}
-#homepage_view #Share .social_share li a{
-    color: #fff;
-}
+
+
 /* ADMIN AUTHENTICATED */
 body.userrole-manager.userrole-authenticated > nav,
 body.userrole-manager.userrole-authenticated > section,

@@ -4,108 +4,56 @@
  *
  * Distributed under terms of the LICENCE.txt license.
  */
-$(document).ready(function(){
-    var $window = $(window);
-    var window_height = $window.height();
-    var window_width = $window.width();
+jQuery(document).ready(function() {
+    $("#lightSlider").lightSlider({
+        item: 3,
+        autoWidth: false,
+        slideMove: 1, // slidemove will be 1 if loop is true
+        slideMargin: 10,
 
-    $('.template-zaffolderview').each(function() {
-        $('#content-core').find('article').each(function() {
-            add_style($(this), 0);
-        })
-        $window.scroll(function(){
-            $('#content-core').find('article').each(function() {
-                var docScroll = $window.scrollTop();
-                add_style($(this), docScroll);
-            })
-        });
-    });
+        addClass: '',
+        mode: "slide",
+        useCSS: true,
+        cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+        easing: 'linear', //'for jquery animation',////
 
-    function add_style(el, docScroll) {
-        el_offset_top = el.offset().top;
-        el_offset_bottom = (el_offset_top + el.outerHeight());
-        position = docScroll + (window_height/1.3);
-        if( (position >= el_offset_top) && (docScroll <= el_offset_bottom) ){
-            el.addClass('in-view');
-        }
-        else {
-            el.removeClass('in-view');
-        }
-    }
-//    Fonction qui permet de savoir si l'élément est placé à gauche ou à droite
-//    function get_style_no_view(el) {
-//        el_offset_left = el.offset().left;
-//        middle = window_width / 2;
-//        if (el_offset_left < middle){
-//            return 'no-view-left'
-//        }
-//        else {
-//            return 'no-view-right'
-//        }
-//    }
-    function change_style_button(scrolled) {
-        $('.button_home').each( function(){
-            href = $(this).attr('href');
-            slide = $(href);
-            slide_top = slide.offset().top - (window_height/4);
-            slide_height = slide.outerHeight();
-            slide_bottom = slide_top + slide_height;
-            if ( scrolled > slide_top  && scrolled < slide_bottom ){
-                $(this).addClass('selected');
-            }
-            else{
-                $(this).removeClass('selected');
-            }
-        });
-    }
+        speed: 400, //ms'
+        auto: true,
+        loop: true,
+        slideEndAnimation: true,
+        pause: 2000,
 
+        keyPress: false,
+        controls: true,
+        prevHtml: '',
+        nextHtml: '',
 
-//    ACCUEIL
-    $('#slides_home').each(function() {
-        change_style_button(0);
-        i=0;
-        $(this).find('article').each(function() {
-            i++;
-            $(this).css('height', window_height);
-            $(this).attr('id', i);
-            $('#buttons_home').append('<a href="#' + i + '" class="button_home">');
-        });
-    });
-    $('.button_home').click(function(){
-        var id = $(this).attr("href");
-        var offset = $(id).offset().top;
-        $('html, body').animate({scrollTop: offset}, 750);
-        return false;
-    });
+        rtl:false,
+        adaptiveHeight:false,
 
-//    Parallax
-    var lastScrollTop = 0;
-    $( window ).scroll(function() {
-        var scrolled = $(this).scrollTop();
-        var scrolled_pourcent = (scrolled / window_height) * 100;
-        if (scrolled > lastScrollTop){
-            scroll = "0";
-        } else {
-            scroll = "1";
-        }
-        lastScrollTop = scrolled;
+        vertical:false,
+        verticalHeight:500,
+        vThumbWidth:100,
 
-        $('#slides_home').find('article').each(function() {
-            article = $(this);
-            article_top = $(this).offset().top;
-            article_height = article.outerHeight();
-            article_bottom = article_top + article_height;
-            visible = scrolled - article_top;
-            pourcent = (visible * 100) / article_height;
-            article.find('.Front').each(function() {
-                $(this).css('top', - (pourcent * 1) + '%');
-            })
-            article.find('.Back').each(function() {
-                $(this).css('top', + (pourcent * 1.3) + '%');
-            })
-        });
+        thumbItem:10,
+        pager: true,
+        gallery: false,
+        galleryMargin: 5,
+        thumbMargin: 5,
+        currentPagerPosition: 'middle',
 
-        change_style_button(scrolled);
+        enableTouch:true,
+        enableDrag:true,
+        freeMove:true,
+        swipeThreshold: 40,
 
+        responsive : [],
+
+        onBeforeStart: function (el) {},
+        onSliderLoad: function (el) {},
+        onBeforeSlide: function (el) {},
+        onAfterSlide: function (el) {},
+        onBeforeNextSlide: function (el) {},
+        onBeforePrevSlide: function (el) {}
     });
 });

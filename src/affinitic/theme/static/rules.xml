@@ -36,15 +36,15 @@
 
     <!-- Logo link -->
     <before css:theme-children=".portaltabs">
-        <li id="logo">
+        <li id="logo" class="logo">
             <xsl:apply-templates css:select="#portal-logo img">
             </xsl:apply-templates>
         </li>
     </before>
-<!--    <copy attributes="src" css:content="#portal-logo img" css:theme="#logo"></copy>-->
-<!--    <xsl:template match="//div[@id='logo']">-->
-<!--        <xsl:attribute name="style">background-image:<xsl:value-of select="//a[@class='logo-link']/img/@src" /></xsl:attribute>-->
-<!--    </xsl:template>-->
+    <before css:theme-children=".portaltabs">
+        <li id="navigation" class="button">
+        </li>
+    </before>
 
     <!-- Content body -->
     <replace css:content="#content" css:theme=".content_body" />
