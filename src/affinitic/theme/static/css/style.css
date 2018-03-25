@@ -6,12 +6,12 @@
  */
 /* GLOBAL */
 @font-face {
-    font-family: Avenir;
+    font-family: 'Avenir';
     src: url(../fonts/AvenirLTStd-Book.otf);
 }
 body {
     margin: 0;
-    font-family: Avenir;
+    font-family: 'Avenir';
     font-size: 1em;
     font-style: normal;
     font-weight: 200;
@@ -24,8 +24,8 @@ a:hover {
     color: #999;
 }
 h1 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 6em;
+    font-family: 'Avenir';
+    font-size: 4em;
     text-align: center;
     font-weight: 200;
     text-transform: uppercase;
@@ -34,7 +34,7 @@ h1 {
 }
 header .description,
 h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Avenir';
     text-align: center;
     margin-top: 0;
     line-height: 1em;
@@ -64,6 +64,10 @@ i.link-external::after {
 
 i.glyphicon{
     display: none;
+}
+i.fa{
+    margin: 0 0.5em;
+    font-size: 1.5em;
 }
 
 
@@ -181,12 +185,6 @@ body > section{
 #view_contact .social_share li {
     display: inline-block;
 }
-#map iframe{
-    width: 100%;
-    height: 30em;
-    margin-top: 2em;
-    border: none;
-}
 
 /* FOOTER */
 footer{
@@ -253,12 +251,25 @@ body.template-homepage_view{
     width: 20px;
     padding-bottom: 20px;
     background: #fff;
-    margin: 0.5em;
+    margin: 1em;
     border-radius: 50%;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
-#homepage_view #shortcut .button:hover {
-    background: #1076ca;
+#homepage_view #shortcut .button label {
+    position: absolute;
+    right: 1em;
+    background-color: #fff;
+    display: block;
+    min-width: 100px;
+    border-radius: 25px;
+    padding: 0.5em 1em;
+    top: -0.5em;
+    display: none;
+    text-align: center;
+}
+#homepage_view #shortcut .button:hover label{
+    display: block;
 }
 #homepage_view h2{
     padding: 0.5em 0;
@@ -271,7 +282,7 @@ body.template-homepage_view{
     background-size: cover;
     background-position: center;
 }
-#homepage_view #container {
+#homepage_view #parallax {
     width: 100%;
     position: fixed;
     top: 5em;
@@ -286,7 +297,6 @@ body.template-homepage_view{
 #homepage_view .group {
   position: relative;
   transform-style: preserve-3d;
-  font-size: 20px;
   height: 200%;
   text-align: center;
 }
@@ -302,13 +312,15 @@ body.template-homepage_view{
     background-position: center;
     background-size: cover;
     height: 60%;
+    z-index: 1;
 }
 #homepage_view .group .foreground {
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 50%;
     width: calc(100% - 8em);
     padding: 2em 4em;
+    z-index: 2;
 }
 #homepage_view .group .image {
     width: 20%;
@@ -331,7 +343,6 @@ body.template-homepage_view{
 }
 #homepage_view .group:nth-child(odd) .foreground {
     background: rgba(16, 118, 202, 0.5);
-    height: auto;
     color: #fff;
 }
 #homepage_view .group:nth-child(odd) h2,
@@ -340,7 +351,6 @@ body.template-homepage_view{
 }
 #homepage_view .group:nth-child(even) .foreground {
     background: #fff;
-    height: auto;
 }
 #homepage_view .group:first-child .foreground{
     background: rgba(255, 255, 255, 0.5);
@@ -380,15 +390,16 @@ body.template-homepage_view{
     height: 100%;
 }
 #homepage_view #Contact .foreground {
-    max-height: 60%;
+    height: auto;
     background: #025A8F;
     color: #fff;
+    position: relative;
+    z-index: 2;
 }
 #homepage_view .group:last-child {
-    height: 30%;
+    height: 50%;
 }
 #homepage_view .group:last-child .foreground {
-    top: 50%;
     background: #025A8F;
     color: #fff;
 }
@@ -424,12 +435,56 @@ body.template-homepage_view{
     background-size: contain;
     display: inline-block;
 }
+/*CONTACT*/
+#view_contact #parallax {
+    width: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+#view_contact #parallax .group {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    text-align: center;
+}
+#view_contact #parallax .group .foreground {
+    height: auto;
+    bottom: 0;
+    background: #025A8F;
+    color: #fff;
+    padding: 2em 0;
+    position: relative;
+}
+#view_contact #parallax .group .foreground h1,
+#view_contact #parallax .group .foreground h2,
+#view_contact #parallax .group .foreground a{
+    color: #fff;
+}
+#view_contact #parallax .group .background {
+    height: 150%;
+    padding: 0;
+    width: 100%;
+    transform: translateZ(-1px) scale(2.2);
+    -webkit-transform: translateZ(-1px) scale(2.2);
+    position: absolute;
+    top: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 
 /* ADMIN AUTHENTICATED */
 body.userrole-manager.userrole-authenticated > nav,
 body.userrole-manager.userrole-authenticated > section,
-body.userrole-manager.userrole-authenticated > section #homepage_view #container,
+body.userrole-manager.userrole-authenticated > section #homepage_view #parallax,
 body.userrole-manager.userrole-authenticated > footer{
     width: calc(100% - 150px);
 }

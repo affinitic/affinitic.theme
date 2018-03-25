@@ -28,28 +28,16 @@
 
         <div class="social_share">
             <a tal:attributes="href item/facebook" target="_blank" title="Affinitic Facebook">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
+                <i class="fa fa-facebook"></i>
             </a>
             <a tal:attributes="href item/twitter" target="_blank" title="Affinitic Twitter">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
+                <i class="fa fa-twitter"></i>
             </a>
             <a tal:attributes="href item/linkedin" target="_blank" title="Affinitic Linkedin">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
+                <i class="fa fa-linkedin"></i>
             </a>
             <a tal:attributes="href item/github" target="_blank" title="Affinitic Github">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
+                <i class="fa fa-github"></i>
             </a>
         </div>
         <div class="adress">
