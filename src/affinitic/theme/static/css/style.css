@@ -6,45 +6,64 @@
  */
 /* GLOBAL */
 @font-face {
-    font-family: 'Avenir';
+    font-family: 'Avenir Light';
+    src: url(../fonts/AvenirLTStd-Light.otf);
+}
+@font-face {
+    font-family: 'Avenir Normal';
     src: url(../fonts/AvenirLTStd-Book.otf);
+}
+@font-face {
+    font-family: 'Avenir Medium';
+    src: url(../fonts/AvenirLTStd-Medium.otf);
+}
+@font-face {
+    font-family: 'Avenir Bold';
+    src: url(../fonts/AvenirLTStd-Black.otf);
 }
 body {
     margin: 0;
-    font-family: 'Avenir';
+    font-family: 'Avenir Normal';
     font-size: 1em;
     font-style: normal;
     font-weight: 200;
     scroll-behavior: smooth;
+    background-image: url("../images/background.jpg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+*{
+    color: #ffffff;
+    box-sizing: border-box;
+}
+.viewpermission-list-folder-contents #content *,
+.viewpermission-modify-portal-content #content *{
+    color: #025A8F;
+}
+.color-text *{
+    color: #025A8F;
+    border-color: #025A8F;
+}
+.color-background{
+    background-color: #025A8F;
 }
 a {
     text-decoration: none;
-    color: #025A8F;
-}
-a:hover {
-    color: #999;
+    color: inherit;
 }
 h1 {
-    font-family: 'Avenir';
-    font-size: 2.5em;
     text-align: center;
-    font-weight: 200;
     text-transform: uppercase;
-    color: #025A8F;
-    margin-bottom: 0;
+    font-family: 'Avenir Bold';
+    font-size: 3em;
+    margin: 0.5em;
 }
-header .description,
 h2 {
-    font-family: 'Avenir';
     text-align: center;
-    margin-top: 0;
-    line-height: 1em;
     text-transform: uppercase;
-    font-size: 1.2em;
-    font-weight: 900;
-    color: #333;
-    margin-bottom: 0;
-    padding: 0 14em;
+    font-family: 'Avenir Medium';
 }
 h6 {
     font-weight: normal;
@@ -53,6 +72,14 @@ ul {
     margin-left: 0;
     padding-left: 0;
 }
+ul.row li{
+    display: inline-block;
+    vertical-align: top;
+}
+.justify {
+    text-align: justify;
+    padding: 1em;
+}
 .image{
     width: 20%;
     padding-bottom: 20%;
@@ -60,6 +87,11 @@ ul {
     background-position: center;
     background-size: contain;
     display: inline-block;
+}
+.image.small{
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 1em;
 }
 .image.mini{
     width: 10%;
@@ -71,9 +103,13 @@ ul {
     padding-bottom: 5%;
     margin: 1em;
 }
-.justify {
-    text-align: justify;
-    padding: 1em;
+.more {
+    border: 2px solid;
+    padding: 0.5em 1em;
+    border-radius: 25px;
+}
+.block{
+    margin-bottom: 5em;
 }
 
 
@@ -92,6 +128,10 @@ i.fa{
     margin: 0 0.5em;
     font-size: 1.5em;
 }
+.fa-xl{
+    margin-top: 1em;
+    font-size: 2em;
+}
 
 
 /* NAVBAR */
@@ -106,7 +146,7 @@ body > nav {
     width: 100%;
     z-index: 2;
 }
-body > nav .portaltabs {
+.portaltabs {
     width: 100%;
     display: flex;
     padding: 0;
@@ -115,41 +155,43 @@ body > nav .portaltabs {
     justify-content: end;
     align-items: center;
 }
-body > nav .portaltabs li{
-    border: 2px solid transparent;
-    border-radius: 25px;
-    font-size: 0.8em;
+.portaltabs li {
     list-style-type: none;
     margin: 1em;
-    padding: 0 1.2em;
-    text-transform: uppercase;
     display: inline-block;
     text-align: center;
 }
-body > nav .portaltabs li a{
-    color: #ffffff;
+.portaltabs li a{
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-size: 0.8em;
     line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1.2em;
+    display: block;
 }
-body > nav .portaltabs li:hover{
+.portaltabs li a:hover{
     background: #FFF none repeat scroll 0 0;
     cursor: pointer;
 }
-body > nav .portaltabs li:hover a {
+.portaltabs li a:hover {
     color: #1076ca;
 }
-body > nav .portaltabs li.selected{
+.portaltabs li.selected a{
     border: 2px solid #fff;
 }
 #logo,
-#logo:hover {
+#logo{
     display: block;
     width: auto;
     height: auto;
     float: left;
-    background: transparent;
     border: none;
     justify-self: start;
     margin-right: auto;
+}
+#logo a:hover{
+    background: transparent;
 }
 #logo img {
     max-height: 50px;
@@ -179,7 +221,7 @@ body > section{
 /* EQUIPE */
 #view_content article.tileItem {
     display: inline-block;
-    width: calc(33.33% - 6em);
+    width: 33.33%;
     margin: 3em 2em;
     vertical-align: top;
 }
@@ -193,6 +235,9 @@ body > section{
     display: inline-block;
     border-radius: 50%;
     margin-bottom: 1em;
+    border: 5px solid #fff;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 .team-name {
     font-weight: 700;
@@ -253,59 +298,8 @@ footer li {
 footer .gsm2{
     display: none;
 }
-/* HOMEPAGE */
-body.template-homepage_view{
-    background-image: url("../images/background.jpg");
-    background-position: top;
-    background-size: cover;
-}
-#homepage_view #shortcut {
-    position: fixed;
-    right: 1em;
-    height: 100%;
-    width: auto;
-    display: block;
-    z-index: 2;
-    margin-top: 10em;
-}
-#homepage_view #shortcut .button {
-    display: block;
-    content: "";
-    width: 20px;
-    padding-bottom: 20px;
-    background: #fff;
-    margin: 1em;
-    border-radius: 50%;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-#homepage_view #shortcut .button label {
-    position: absolute;
-    right: 1em;
-    background-color: #fff;
-    display: block;
-    min-width: 100px;
-    border-radius: 25px;
-    padding: 0.5em 1em;
-    top: -0.5em;
-    display: none;
-    text-align: center;
-}
-#homepage_view #shortcut .button:hover label{
-    display: block;
-}
-#homepage_view h2{
-    padding: 0.5em 0;
-    font-size: 2em;
-}
-#homepage_view .item {
-    padding: 4em 3em;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-#homepage_view .parallax {
+/*PARALLAX*/
+.parallax {
     width: 100%;
     position: fixed;
     top: 5em;
@@ -317,122 +311,89 @@ body.template-homepage_view{
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
-#homepage_view .group {
-  position: relative;
-  transform-style: preserve-3d;
-  height: 200%;
-  text-align: center;
-}
-#homepage_view .group .background {
-    transform: translateZ(-1px) scale(2.2);
-    -webkit-transform: translateZ(-1px) scale(2.2);
-    height: auto;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    padding: 5em 0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 60%;
-    z-index: 1;
-}
-#homepage_view .group .foreground {
-    position: absolute;
-    top: 0;
-    height: 50%;
-    width: calc(100% - 8em);
-    padding: 2em 4em;
-    z-index: 2;
-}
-#homepage_view .group li{
-    display: inline-block;
-    vertical-align: top;
-}
-#homepage_view .group .more {
-    border: 2px solid #025A8F;
-    border-radius: 25px;
-    padding: 0.2em 0.5em;
-    margin: 0.5em;
-    display: inline-block;
-}
-#homepage_view .group:nth-child(odd) .foreground {
-    background: rgba(16, 118, 202, 0.5);
-    color: #fff;
-}
-#homepage_view .group:nth-child(odd) h2,
-#homepage_view .group:nth-child(odd) a{
-    color: #fff;
-}
-#homepage_view .group:nth-child(even) .foreground {
-    background: #fff;
-}
-#homepage_view .group:first-child .foreground{
-    background: rgba(255, 255, 255, 0.5);
-    height: 100%;
-}
-#homepage_view .group:first-child .foreground,
-#homepage_view .group:first-child a,
-#homepage_view .group:first-child h2{
-    color: #025A8F;
-}
-#homepage_view #Number{
-    height: 50%;
-    top: -75%;
-    color: #fff;
-}
-#homepage_view #Number .foreground {
-    height: 200%;
-    background-color: transparent;
-    padding: 0;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-}
-#homepage_view #Number .background {
-    background-repeat: repeat;
-    background-position: top;
-    background-size: contain;
-    height: 100%;
-    padding: 0;
-}
-#homepage_view #OpenSource .image{
-    width: 10%;
-    padding-bottom: 10%;
-}
-#homepage_view #Contact {
-    height: 100%;
-}
-#homepage_view #Contact .foreground {
-    height: auto;
-    background: #025A8F;
-    color: #fff;
+.group_parallax {
     position: relative;
+    transform-style: preserve-3d;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 50%;
+}
+.group_parallax .foreground,
+.group_parallax .middleground {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.group_parallax .foreground{
+    height: auto;
+    padding: 5% 0;
+}
+.group_parallax .middleground {
+    height: 100%;
+    position: absolute;
+}
+.group_parallax .background {
+    transform: translateZ(-1px) scale(2.2);
+    -webkit-transform: translateZ(-1px) scale(2.1);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -20%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+/* HOMEPAGE */
+#shortcut {
+    position: fixed;
+    right: 1em;
+    height: 100%;
+    width: auto;
+    display: block;
     z-index: 2;
+    margin-top: 10em;
 }
-#homepage_view .group:last-child {
-    height: 50%;
+#shortcut .button {
+    display: block;
+    content: "";
+    width: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    margin: 1em;
+    border-radius: 50%;
+    box-shadow: -1px 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 3px solid #fff;
+    box-sizing: content-box;
 }
-#homepage_view .group:last-child .foreground {
-    background: #025A8F;
-    color: #fff;
+#shortcut .button:hover {
+    background: #1076ca;
 }
-#homepage_view #Contact h2,
-#homepage_view #Contact a,
-#homepage_view .group:last-child h2,
-#homepage_view .group:last-child a{
-    color: #fff;
+#shortcut .button label {
+    position: absolute;
+    right: 20px;
+    background-color: #fff;
+    display: block;
+    width: auto;
+    border-radius: 25px;
+    padding: 0.5em 1em;
+    top: -8px;
+    display: none;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: -1px 3px 5px rgba(0, 0, 0, 0.1);
 }
-#homepage_view .group .group_number {
-    margin: 0 3em;
+#shortcut .button:hover label{
+    display: block;
 }
 
-#homepage_view .group .number {
-    font-weight: 900;
-    font-size: 2em;
-}
-
+/*SLIDE*/
 .slideshow {
     margin: 2em 0;
 }
@@ -442,122 +403,11 @@ body.template-homepage_view{
     padding: 0 5px;
     margin-top: 2em;
 }
-.slideshow .image_slider {
-    width: 150px;
-    padding-bottom: 150px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    display: inline-block;
-}
-
-/*SERVICES*/
-#Services_folder > div{
-    margin-bottom: 4em;
-}
-#Services_folder #Services_item a{
-    display: inline-block;
-    vertical-align: top;
-}
-#Services_folder #Tools{
-    margin-top: 4em;
-}
-/*DOCUMENT*/
-#view_document .parallax {
-    width: 100%;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    perspective: 1px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-#view_document .parallax .group {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    text-align: center;
-}
-#view_document .parallax .group .foreground {
-    height: auto;
-    top: 50%;
-    background: #fff;
-    color: #025A8F;
-    padding: 2em 0;
-    position: relative;
-    z-index: 3;
-}
-#view_document .parallax .group .background {
-    height: 150%;
-    padding: 0;
-    width: 100%;
-    transform: translateZ(-1px) scale(2.2);
-    -webkit-transform: translateZ(-1px) scale(2.2);
-    position: absolute;
-    top: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: 1;
-}
-#view_document .parallax .group .background.before{
-    background: rgba(255, 255, 255, 0.3);
-    z-index: 2;
-}
-
-/*CONTACT*/
-#view_contact .parallax {
-    width: 100%;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    perspective: 1px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-#view_contact .parallax .group {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    text-align: center;
-}
-#view_contact .parallax .group .foreground {
-    height: auto;
-    bottom: 0;
-    background: #025A8F;
-    color: #fff;
-    padding: 2em 0;
-    position: relative;
-}
-#view_contact .parallax .group .foreground h1,
-#view_contact .parallax .group .foreground h2,
-#view_contact .parallax .group .foreground a{
-    color: #fff;
-}
-#view_contact .parallax .group .background {
-    height: 150%;
-    padding: 0;
-    width: 100%;
-    transform: translateZ(-1px) scale(2.2);
-    -webkit-transform: translateZ(-1px) scale(2.2);
-    position: absolute;
-    top: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
 
 /* ADMIN AUTHENTICATED */
 body.userrole-manager.userrole-authenticated > nav,
 body.userrole-manager.userrole-authenticated > section,
-body.userrole-manager.userrole-authenticated > section #homepage_view .parallax,
+body.userrole-manager.userrole-authenticated > section .parallax,
 body.userrole-manager.userrole-authenticated > footer{
     width: calc(100% - 150px);
 }

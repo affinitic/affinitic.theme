@@ -37,8 +37,10 @@
     <!-- Logo link -->
     <before css:theme-children=".portaltabs">
         <li id="logo" class="logo">
-            <xsl:apply-templates css:select="#portal-logo img">
-            </xsl:apply-templates>
+            <a href="./">
+                <xsl:apply-templates css:select="#portal-logo img">
+                </xsl:apply-templates>
+            </a>
         </li>
     </before>
     <before css:theme-children=".portaltabs">
