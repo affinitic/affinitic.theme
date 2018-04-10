@@ -112,6 +112,52 @@ ul.row li{
     margin-bottom: 5em;
 }
 
+/* DOCUMENT */
+.documentDescription{
+    text-align: center;
+}
+#slide-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#slide-group1 {
+  height: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  font-size: 20px;
+}
+.slide-background {
+  transform: translateZ(-1px);
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #FF8A8A;
+  padding-top: 100px;
+}
+.slide-foreground {
+  position: absolute;
+  top: 500px;
+  height: 500px;
+  width: 100%;
+  background: #23819C;
+  opacity: 0.8;
+  padding-top: 100px;
+}
+
+
+
+
+
+
+
 
 /*TOOLBAR*/
 .plone-toolbar-expanded #edit-zone {
@@ -165,10 +211,10 @@ body > nav {
     border: 2px solid transparent;
     border-radius: 25px;
     font-size: 0.8em;
-    line-height: 2.5em;
     text-transform: uppercase;
     padding: 0 1.2em;
     display: block;
+    white-space: nowrap;
 }
 .portaltabs li a:hover{
     background: #FFF none repeat scroll 0 0;
@@ -205,8 +251,7 @@ body > section{
     position: absolute;
     right: 0;
     top: 0;
-    padding-bottom: 5em;
-    padding-top: 4em;
+    padding: 6em 0;
     z-index: 1;
     width: 100%;
     background-position: top;
@@ -218,40 +263,36 @@ body > section{
     padding: 2em;
 }
 
-/* EQUIPE */
-#view_content article.tileItem {
-    display: inline-block;
-    width: 33.33%;
-    margin: 3em 2em;
-    vertical-align: top;
-}
-.team-photo {
-    width: 40%;
-    padding-bottom: 40%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    display: inline-block;
-    border-radius: 50%;
-    margin-bottom: 1em;
-    border: 5px solid #fff;
-    box-sizing: content-box;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-.team-name {
-    font-weight: 700;
-    color: #333;
-}
-.team-description {
-    font-size: 0.9em;
-    font-weight: 400;
-    color: #1076ca;
-}
 
 /* CONTACT */
 #view_contact .social_share li {
     display: inline-block;
+}
+#view_contact .group_parallax .foreground{
+    height: 100%;
+    top: 3em;
+    padding: 0;
+}
+#view_contact .group_parallax .background p,
+#view_contact .group_parallax .background p iframe{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+#view_contact .group_parallax .background{
+    height: 100%;
+    top: calc(150% + 5em);
+}
+.map-marker .fa.fa-map-marker,
+.map-contact .fa.fa-envelope{
+    font-size: 4rem;
+    color: #333;
+    margin: 1rem;
+}
+.map-contact {
+    position: absolute;
+    bottom: 10rem;
+    left: calc(50% - 3em);
 }
 
 /* FOOTER */
@@ -270,8 +311,9 @@ footer{
 footer a{
     color: #cccccc;
 }
-footer a:hover{
-    color: #015A90;
+footer a:hover span,
+footer a:hover i{
+    color: #1076ca !important;
 }
 body > footer > div {
     display: inline-block;
@@ -392,6 +434,10 @@ footer .gsm2{
 #shortcut .button:hover label{
     display: block;
 }
+#Contact iframe {
+    width: 100%;
+    height: 50vw;
+}
 
 /*SLIDE*/
 .slideshow {
@@ -410,4 +456,54 @@ body.userrole-manager.userrole-authenticated > section,
 body.userrole-manager.userrole-authenticated > section .parallax,
 body.userrole-manager.userrole-authenticated > footer{
     width: calc(100% - 150px);
+}
+
+/* TEAM */
+#view_content article.tileItem {
+    display: inline-block;
+    width: 33.33%;
+    margin: 3em 2em;
+    vertical-align: top;
+}
+.team-photo {
+    background-size: cover;
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.team-name {
+    font-weight: 700;
+    color: #333;
+}
+.team-description {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #1076ca;
+}
+
+
+/* TEAM FOLDER */
+#view_team_folder .lSSlideWrapper ul{
+    text-align: center;
+    margin: 3em 0;
+}
+#view_team_folder .lSPager{
+    width: 100% !important;
+    text-align: center;
+}
+#view_team_folder .lSPager li {
+    float: none;
+    display: inline-block;
+    margin: 1em;
+}
+#view_team_folder .lSPager li img {
+    display: inline-block;
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-sizing: content-box;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
