@@ -437,6 +437,17 @@ footer .gsm2{
 #shortcut .button:hover label{
     display: block;
 }
+#Services .row {
+    padding-top: 12%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+#Services .row .image{
+width: 100%;
+padding-bottom: 50%;
+}
 #Contact iframe {
     width: 100%;
     height: 50vw;
