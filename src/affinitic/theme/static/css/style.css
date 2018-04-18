@@ -38,6 +38,9 @@ body {
     color: #ffffff;
     box-sizing: border-box;
 }
+input {
+    color: #000;
+}
 .viewpermission-list-folder-contents #content *,
 .viewpermission-modify-portal-content #content *{
     color: #025A8F;
@@ -212,7 +215,7 @@ body > nav {
     border-radius: 25px;
     font-size: 0.8em;
     text-transform: uppercase;
-    padding: 0 1.2em;
+    padding: 0.5em 1.2em 0.3em 1.2em;
     display: block;
     white-space: nowrap;
 }
@@ -379,8 +382,8 @@ footer .gsm2{
     position: absolute;
 }
 .group_parallax .background {
-    transform: translateZ(-1px) scale(2.2);
-    -webkit-transform: translateZ(-1px) scale(2.1);
+    transform: translateZ(-1px) scale(2.02);
+    -webkit-transform: translateZ(-1px) scale(2.02);
     height: 100%;
     width: 100%;
     position: absolute;
