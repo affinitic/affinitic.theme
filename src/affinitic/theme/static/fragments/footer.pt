@@ -53,7 +53,7 @@
                     <span tal:content="item/country"></span>
                 </li>
                 <li>
-                    N° entreprise<span tal:content="item/tva"></span>
+                    N° entreprise <span tal:content="item/tva"></span>
                 </li>
             </ul>
         </div>

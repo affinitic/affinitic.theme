@@ -361,7 +361,7 @@ footer .gsm2{
     transform-style: preserve-3d;
     height: 100%;
     text-align: center;
-    margin-bottom: 50%;
+    margin-bottom: 0;
 }
 .group_parallax .foreground,
 .group_parallax .middleground {
@@ -392,6 +392,9 @@ footer .gsm2{
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
+}
+#view_contact .group_parallax .foreground >div {
+    margin-bottom: 1em;
 }
 
 /* HOMEPAGE */
