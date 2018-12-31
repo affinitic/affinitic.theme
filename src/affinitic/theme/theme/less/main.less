@@ -315,8 +315,11 @@ body{
         .optionsToggle label,
         .documentDescription,
         .documentByLine,
-        a{
+        a, a:hover, a:link, a:focus, a:active{
             color: @color-dark;
+        }
+        a, a:hover, a:link, a:focus, a:active{
+            border: none;
         }
         h2{
             border-style: solid;
@@ -427,6 +430,18 @@ body.template-logged_out{
         background-position: center;
         margin-bottom: 3rem;
     }
+}
+.glyphicon.link-https{
+    display: none;
+}
+.reference-link{
+    font-size: 2rem;
+    transition: all 0.5s;
+    color: @color-dark;
+}
+a:hover .reference-link{
+    font-size: 2.5rem;
+    color: @color-default;
 }
 body.template-login_success,
 body.template-logged_out{
