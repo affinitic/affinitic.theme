@@ -1,0 +1,54 @@
+#main-container #sidebar{
+    width: auto;
+    max-width: 20%;
+    margin: 9rem 0 2rem 2rem;
+    .portlet:not(#portlet-prefs){
+        border: none;
+        box-shadow: none;
+        .portletHeader{
+            background: @color-light;
+            padding: 2rem 2rem 1rem 2rem;
+            color: @color-default;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            pointer-events: none;
+            a{
+               color: @color-default;
+            }
+        }
+        .portletContent{
+            border-top: none;
+            padding: 0 2rem 1rem 2rem;
+            color: @color-dark;
+            p{
+                padding: 0;
+            }
+            a{
+                padding: 0;
+                background: transparent;
+                border-top: none;
+                color: @color-dark;
+                &::before{
+                    display: none;
+                }
+            }
+            .pull-right {
+                float: none !important;
+            }
+            .portletItemDetails{
+                margin-top: 0;
+            }
+        }
+        .portletFooter{
+            padding: 0rem 2rem 1rem 2rem;
+            background: @color-light;
+            border-top: none;
+            box-shadow: none;
+            text-align: right;
+            a{
+                &:extend(.readmore a);
+                margin-top: 1rem !important;
+            }
+        }
+    }
+}

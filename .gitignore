@@ -1,46 +1,37 @@
-# Python
-*.py[cod]
-
-# C extensions
-*.so
-
-# Packages
-*.egg
+.coverage
 *.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-include
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
+*.log
 *.mo
-
-# Mr Developer
+*.py?
+*.swp
+# dirs
+bin/
+buildout-cache/
+develop-eggs/
+eggs/
+htmlcov/
+include/
+lib/
+local/
+parts/
+src/*
+test.plone_addon/
+var/
+/node_modules/
+# files
+.installed.cfg
 .mr.developer.cfg
-.project
-.pydevproject
-devel
-
-# Zope / Buildout
-.Python
-.coverage
-versions-picked.cfg
-
-# Mac
-.DS_Store
+buildout.cfg
+lib64
+log.html
+output.xml
+pip-selfcheck.json
+report.html
+# excludes
+!.coveragerc
+!.editorconfig
+!.gitattributes
+!.gitignore
+!.gitkeep
+!.travis.yml
+!src/affinitic

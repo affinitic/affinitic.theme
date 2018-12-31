@@ -1,3 +1,4 @@
 graft src/affinitic
+graft docs
 include *.rst
 global-exclude *.pyc

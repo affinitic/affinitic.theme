@@ -1,0 +1,35 @@
+#portal-footer-wrapper{
+    padding: 0;
+    background-color: @color-light;
+    color: @color-dark;
+    .col-xs-12{
+        padding: 0;
+        .portletWrapper{
+            border-bottom: 0;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+    }
+    .portletActions{
+        background-color: @color-dark;
+        border-radius: 0;
+        a{
+            color: @color-light;
+        }
+    }
+    .topportlet-static {
+        text-align: right;
+        margin-right: @content-space;
+    }
+    .portlet-static-copyright{
+        text-align: right;
+        padding: 0 10rem;
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 767px) {
+    #portal-footer-wrapper .portlet .portletContent li{
+        padding: 1rem;
+    }
+}

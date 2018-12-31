@@ -1,23 +1,72 @@
-===============
-affinitic.theme
-===============
+.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
+   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
+   This text does not appear on pypi or github. It is a comment.
 
-This is a Diazo theme package.
+===============affinitic.theme
+===============
+Tell me what your product does
+
+Features
+--------
+
+- Can be bullet points
+
+
+Examples
+--------
+
+This add-on can be seen in action at the following sites:
+- Is there a page on the internet where everybody can see the features?
+
+
+Documentation
+-------------
+
+Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+
+
+Translations
+------------
+
+This product has been translated into
+
+- Klingon (thanks, K'Plai)
+
+
+Installation
+------------
+
+Install affinitic.theme by adding it to your buildout
+
+.. code-block:: ini
+
+    [buildout]
+
+    ...
+
+    eggs =
+        affinitic.theme
+
+
+and then run :command:`bin/buildout`
+
+
+Contribute
+----------
+
+- Issue Tracker: https://github.com/collective/affinitic.theme/issues
+- Source Code: https://github.com/collective/affinitic.theme
+- Documentation: https://docs.plone.org/foo/bar
+
+
+Support
+-------
+
+If you are having issues, please let us know.
+We have a mailing list located at: project@example.com
 
 
 License
 -------
 
 The project is licensed under the GPLv2.
-
-
-Credits
--------
-
-This package was developed by `Affinitic team <https://github.com/affinitic>`_.
-
-.. image:: http://www.affinitic.be/affinitic_logo.png
-   :alt: Affinitic website
-   :target: http://www.affinitic.be
-
-``affinitic.theme`` is licensed under GNU General Public License, version 2.

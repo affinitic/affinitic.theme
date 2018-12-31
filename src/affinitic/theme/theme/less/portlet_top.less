@@ -1,0 +1,188 @@
+#portal-top-wrapper{
+    background-color: @color-dark;
+    color: @color-light;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    padding: 0 10rem;
+    .topportlet-static{
+        margin-right: auto;
+        p:first-child{
+            margin: 0;
+        }
+    }
+    .topportlet-search{
+        #searchform {
+            display: flex;
+            color: @color-dark;
+            a{
+                color: @color-dark;
+            }
+            input{
+                padding: 0 0.5rem;
+                height: auto;
+                font-size: 1.2rem;
+                visibility: hidden;
+                margin: 0.3rem 0;
+            }
+            &:hover input{
+                visibility: visible;
+            }
+            button,
+            button:hover{
+                background-color: transparent;
+                border: none;
+                color: @color-light;
+                padding: 0.5rem;
+                box-shadow: none;
+            }
+            .livesearch-results li{
+                padding: 0.5rem;
+                h4{
+                    margin: 0;
+                }
+                .description:empty{
+                    display: none;
+                }
+            }
+            .livesearch-results li:hover,
+            .livesearch-results li.selected{
+                background-color: @color-default-fider5;
+            }
+        }
+        & ~ #portal-header #portal-searchbox{
+            display: none;
+        }
+    }
+    [class^="icon-"] a::before,
+    .icon-logout::before,
+    .icon-login::before{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+    }
+    [class^="icon-"] a:hover::after{
+        content: attr(aria-label);
+        position: absolute;
+        background-color: @color-default;
+        top: 100%;
+        border-radius: 8px;
+        padding: 0.2rem 0.5rem;
+        margin-top: 1rem;
+    }
+    .topportlet-action-top_actions{
+        .glyphicon.link-https{
+            display: none;
+        }
+        a{
+            position: relative
+        }
+        .icon-facebook a::before{
+            font-family: "Font Awesome 5 Brands";
+            content: "\f39e";
+        }
+        .icon-twitter a::before{
+            font-family: "Font Awesome 5 Brands";
+            content: "\f099";
+        }
+        .icon-sitemap a::before{
+            content: "\f0e8";
+        }
+        .icon-accessibility a::before{
+            content: "\f29a";
+        }
+        .icon-contact a::before{
+            content: "\f0e0";
+        }
+        span{
+            display: none;
+        }
+    }
+    .topportlet-login{
+        padding-right: @content-space;
+        padding-left: 1rem;
+        a{
+            color: @color-light;
+            margin-left: 0.5rem;
+            &.icon-login::before{
+                content: "\f007";
+            }
+            &.icon-logout::before{
+                content: "\f2f5";
+            }
+            & > span{
+                display: none;
+            }
+        }
+    }
+}
+[class^="topportlet-action"] ul{
+    padding: 0;
+    display: flex;
+    margin: 0;
+    justify-content: end;
+    width: 100%;
+    li{
+        margin: 0 0.5rem;
+        list-style: none;
+        padding-left: 1rem;
+        span, a{
+            white-space: nowrap;
+            color: inherit;
+        }
+    }
+}
+.topportlet-login{
+    & ~ #portal-anontools{
+        display: none;
+    }
+}
+@media (max-width: 992px) {
+    #portal-top-wrapper{
+        .topportlet-static{
+            padding-left: 5rem;
+        }
+        .topportlet-login{
+            padding-right: 5rem;
+        }
+    }
+}
+@media (max-width: 767px) {
+    #portal-top-wrapper{
+        justify-content: center;
+        .topportlet-search{
+            #searchform{
+                min-width: auto;
+                input{
+                    visibility: visible;
+                    display: none;
+                    width: 0;
+                }
+            }
+            &:hover{
+                width: 100%;
+                #searchform{
+                    input{
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .topportlet-static{
+            display: none;
+        }
+        .topportlet-login{
+            padding-right: 1rem;
+            padding-right: 0;
+        }
+    }
+}

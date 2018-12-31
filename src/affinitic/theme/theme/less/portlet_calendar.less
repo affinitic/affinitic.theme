@@ -1,0 +1,27 @@
+main .portletCalendar{
+    .portletContent{
+        .ploneCalendar{
+            border: none;
+            thead,
+            .weekdays th,
+            td{
+                background-color: transparent;
+                border: none;
+                padding: 1px 1px 1px 6px;
+            }
+            .today span{
+                box-shadow: 0 0 0 5px @color-default;
+                background-color: @color-default;
+                color: @color-light;
+            }
+            .cal_has_events a{
+                border-radius: 50%;
+                box-shadow: 0 0 0 2px @color-default-fider20;
+                background-color: @color-default-fider20;
+               &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}

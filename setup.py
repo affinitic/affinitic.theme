@@ -1,32 +1,63 @@
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+"""Installer for the affinitic.theme package."""
 
-version = 1.0
+from setuptools import find_packages
+from setuptools import setup
 
-setup(name='affinitic.theme',
-      version=version,
-      description='Affinitic Theme',
-      long_description=open('README.rst').read() + '\n' +
-                       open('CHANGES.rst').read(),
-      # Get more strings from
-      # http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      classifiers=[
-        'Environment :: Web Environment',
-        'Framework :: Plone',
-        'Programming Language :: Python',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+
+long_description = '\n\n'.join([
+    open('README.rst').read(),
+    open('CONTRIBUTORS.rst').read(),
+    open('CHANGES.rst').read(),
+])
+
+
+setup(
+    name='affinitic.theme',
+    version='1.0a1',
+    description="A theme add-on for Plone",
+    long_description=long_description,
+    # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
+        "Environment :: Web Environment",
+        "Framework :: Plone",
+        "Framework :: Plone :: 5.1",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.7",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    ],
+    keywords='Python Plone',
+    author='aurore',
+    author_email='aurore@affinitic.be',
+    url='https://pypi.python.org/pypi/affinitic.theme',
+    license='GPL version 2',
+    packages=find_packages('src', exclude=['ez_setup']),
+    namespace_packages=['affinitic'],
+    package_dir={'': 'src'},
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=[
+        'plone.api',
+        'Products.GenericSetup>=1.8.2',
+        'setuptools',
+        'z3c.jbot',
+        'plone.app.theming',
+        'plone.app.themingplugins',
+    ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
+            # Plone KGS does not use this version, because it would break
+            # Remove if your package shall be part of coredev.
+            # plone_coredev tests as of 2016-04-01.
+            'plone.testing>=5.0.0',
+            'plone.app.contenttypes',
+            'plone.app.robotframework[debug]',
         ],
-      keywords='affinitic diazo theme',
-      author='Affinitic',
-      author_email='info@affinitic.be',
-      url='https://github.com/affinitic/affinitic.theme',
-      license='GPL',
-      packages=find_packages('src', exclude=['ez_setup']),
-      package_dir={'': 'src'},
-      namespace_packages=['affinitic'],
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=[
-          'setuptools',
-          'plone.app.themingplugins',
-          # -*- Extra requirements: -*-
-      ])
+    },
+    entry_points="""
+    [z3c.autoinclude.plugin]
+    target = plone
+    """,
+)
