@@ -218,23 +218,21 @@ body{
                 mask-size: 50%;
                 padding: 1rem;
                 display: inline-block;
-                background-color: @color-light;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
                 transition: all 0.5s;
                 margin-bottom: -4vw;
                 transform: translateY(-100%);
+                filter: brightness(100);
             }
             [class^="article-columns-"]{
                 &:hover{
                     .article-icon{
-                        width: 7vw;
-                        height: 7vw;
-                        background-color: @color-light;
-                        color: @color-default;
-                        margin-bottom: -9rem;
-                        transform: translateY(calc(-100% + 3rem));
+                        width: 5vw;
+                        height: 5vw;
+                        margin-bottom: -6rem;
+                        transform: translateY(calc(-100% + 2rem));
                     }
                 }
             }
