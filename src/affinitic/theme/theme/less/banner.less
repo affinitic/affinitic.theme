@@ -1,0 +1,40 @@
+#portal-banner{
+    .bannerSubtitle{
+        color: @color-default;
+    }
+    .bannerTitle{
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+        color: @color-dark;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    .bannerDescription{
+        color: @color-dark;
+        font-weight: normal;
+    }
+    .readmore{
+        text-align: right;
+        a{
+            padding: 0.2rem 1rem;
+            border-radius: 0.8rem;
+            background-color: @color-default;
+            border: 2px solid transparent !important;
+            color: @color-light;
+            margin: 0rem 0.3rem 0.6rem 0;
+            display: inline-block;
+            font-size: 1.3rem;
+        }
+    }
+    .readmore a{
+        margin-top: 3rem;
+        &:active,
+        &:focus,
+        &:hover{
+            background-color: @color-light;
+            border: 2px solid @color-default !important;
+            color: @color-default !important;
+            text-decoration: none;
+        }
+    }
+}

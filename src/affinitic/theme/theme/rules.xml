@@ -40,6 +40,9 @@
         <xsl:apply-templates css:select="#plone-lock-status" />
     </replace>
 
+    <replace css:theme-children="#portal-banner" css:content-children="#portal-banner" />
+    <drop css:content="#portal-banner" />
+
     <!-- Central column -->
     <replace css:theme="#content-container" method="raw">
 
