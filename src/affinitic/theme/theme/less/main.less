@@ -43,6 +43,13 @@ body{
                 color: @color-light;
                 text-decoration: none;
             }
+            a,
+            a:hover,
+            a:link{
+                color: @color-light;
+                text-decoration: none;
+                border-bottom: none;
+            }
         }
     }
     h1{
@@ -213,16 +220,13 @@ body{
             .article-icon {
                 width: 4vw;
                 height: 4vw;
-                mask-repeat: no-repeat;
-                mask-position: center;
-                mask-size: 50%;
                 padding: 1rem;
                 display: inline-block;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
-                transition: all 0.5s;
-                margin-bottom: -4vw;
+                transition: all 0.2s;
+                margin-bottom: -3vw;
                 transform: translateY(-100%);
                 filter: brightness(100);
             }
@@ -232,9 +236,12 @@ body{
                         width: 5vw;
                         height: 5vw;
                         margin-bottom: -6rem;
-                        transform: translateY(calc(-100% + 2rem));
                     }
                 }
+            }
+            .reference-logo-intro{
+                background-color: @color-light;
+                border: 1rem solid @color-light;
             }
             .color-default{
                 background-color: @color-default;
@@ -457,12 +464,13 @@ body.template-logged_out{
 }
 .reference-link{
     font-size: 2rem;
-    transition: all 0.5s;
-    color: @color-dark;
+    transition: all 0.2s;
+    color: @color-light;
+    opacity: 0.7;
 }
 a:hover .reference-link{
     font-size: 2.5rem;
-    color: @color-default;
+    opacity: 1;
 }
 body.template-login_success,
 body.template-logged_out{
