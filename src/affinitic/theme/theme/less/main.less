@@ -271,7 +271,7 @@ body{
     .tags,
     .readmore a{
         padding: 0.2rem 1rem;
-        border: 1px solid @color-light !important;
+        border: 1px solid @color-light;
         border-radius: 0.8rem;
         background-color: rgba(255, 255, 255, 0.3);
         margin: 0rem 0.3rem 0.6rem 0;
@@ -280,8 +280,12 @@ body{
     }
     .readmore a{
         margin-top: 3rem;
+        border: 2px solid @color-default;
+        background-color: @color-default;
+        color: @color-light;
         &:hover{
-            background-color: @color-light;
+            border: 2px solid @color-default !important;
+            background-color: @color-light !important;
             color: @color-default !important;
         }
     }
