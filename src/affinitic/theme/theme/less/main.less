@@ -439,6 +439,71 @@ body{
         justify-content: center;
         padding: 1rem 2rem;
     }
+
+    .content-team {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: wrap;
+        a{
+            margin: 2rem;
+            text-align: center;
+            .image{
+                width: 7rem;
+                height: 7rem;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 1rem;
+                position: relative;
+            }
+            .image-background{
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &::before{
+                    background-color: transparent;
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: 0.3s;
+                    position: absolute;
+                }
+                &::after{
+                    content: "\f067";
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: bold;
+                    color: transparent;
+                    transition: 0.3s;
+                    position: relative;
+                    transition-timing-function: cubic-bezier(0, 0, 0, 3);
+                    font-size: 1rem;
+                }
+            }
+            &:hover{
+                .image-background::before{
+                    background-color: @color-default;
+                    opacity: 0.7;
+                }
+                .image-background::after{
+                    content: "\f067";
+                    color: @color-light;
+                    font-size: 2rem;
+                }
+            }
+            .name{
+                text-transform: uppercase;
+            }
+        }
+    }
 }
 body.template-login_form,
 body.template-login_success,
