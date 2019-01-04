@@ -524,6 +524,73 @@ body{
             }
         }
     }
+    .glyphicon-social{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 4rem;
+    }
+    [class^="glyphicon-fab-"]{
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        div::before{
+            font-family: 'Font Awesome 5 Brands';
+            font-size: 1.8rem;
+            text-align: center;
+            display: inline-block;
+            transition: all 0.2s;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+        &:hover div::before{
+            font-size: 2.5rem;
+            top: -0.5rem;
+        }
+    }
+    .glyphicon-fab-facebook div::before{
+        content: "\f39e";
+    }
+    .glyphicon-fab-twitter div::before{
+        content: "\f099";
+    }
+    .glyphicon-fab-linkedin div::before{
+        content: "\f0e1";
+    }
+    .glyphicon-fab-github div::before{
+        content: "\f09b";
+    }
+    .glyphicon-fab-gitlab div::before{
+        content: "\f296";
+    }
+    .glyphicon-fab-pinterest div::before{
+        content: "\f0d2";
+    }
+    .glyphicon-fab-googleplus div::before{
+        content: "\f0d5";
+    }
+    .glyphicon-fab-instagram div::before{
+        content: "\f16d";
+    }
+    .glyphicon-fab-reddit div::before{
+        content: "\f1a1";
+    }
+    .glyphicon-fab-vimeo div::before{
+        content: "\f27d";
+    }
+    .glyphicon-fab-whatsapp div::before{
+        content: "\f232";
+    }
+    .glyphicon-fab-youtube div::before{
+        content: "\f167";
+    }
+    .glyphicon-fab-link div::before{
+        content: "\f0c1";
+    }
 }
 body.template-login_form,
 body.template-login_success,
