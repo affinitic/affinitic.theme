@@ -209,43 +209,31 @@ body{
                 flex: 1;
                 text-align: left;
             }
-            .article-columns-3 {
-                width: calc(60vw / 3);
-                text-align: center;
-            }
-            .article-columns-4 {
-                width: calc(60vw / 4);
-                text-align: center;
-            }
             .article-columns-5 {
-                width: calc(60vw / 5);
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                width: 20%;
                 text-align: center;
-            }
-            .article-columns-7 {
-                width: calc(60vw / 7);
-                text-align: center;
+                .article-content-icon{
+                    width: 5vw;
+                    height: 5vw;
+                    transition: padding 0.3s;
+                    padding: 1rem;
+                }
+                &:hover .article-content-icon{
+                    padding: 0;
+                }
             }
             .article-icon {
-                width: 4vw;
-                height: 4vw;
-                padding: 1rem;
-                display: inline-block;
-                background-size: cover;
+                display: block;
+                background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
                 transition: all 0.2s;
-                margin-bottom: -3vw;
-                transform: translateY(-100%);
-                filter: brightness(100);
-            }
-            [class^="article-columns-"]{
-                &:hover{
-                    .article-icon{
-                        width: 5vw;
-                        height: 5vw;
-                        margin-bottom: -6rem;
-                    }
-                }
+                width: 100%;
+                height: 100%;
             }
             .reference-logo-intro{
                 background-color: @color-light;
