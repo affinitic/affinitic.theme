@@ -6,6 +6,8 @@ body{
     background-position: top center;
     overflow: hidden;
     color: @color-light;
+    font-weight: 400;
+    font-size: 1.5rem;
     &:not(.frontend) > .outer-wrapper {
         color: @color-dark !important;
         .content-body-footer{
@@ -36,19 +38,16 @@ body{
             .formHelp,
             .optionsToggle label,
             .documentDescription,
-            .documentByLine,
-            a,
-            a:hover,
-            a:link{
+            .documentByLine{
                 color: @color-light;
                 text-decoration: none;
             }
             a,
             a:hover,
-            a:link{
+            a:link,
+            a:focus,
+            a:active{
                 color: @color-light;
-                text-decoration: none;
-                border-bottom: none;
             }
         }
     }
@@ -57,6 +56,8 @@ body{
         border-bottom: none;
         margin-bottom: 5rem;
         text-transform: uppercase;
+        font-weight: bold;
+        font-size: 4rem;
     }
     h2{
         border-style: solid;

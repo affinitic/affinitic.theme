@@ -7,6 +7,16 @@
     align-items: center;
     justify-content: end;
     padding: 0 10rem;
+    a,
+    a:hover,
+    a:link,
+    a:focus,
+    a:active{
+        outline: none;
+        color: @color-light;
+        text-decoration: none;
+        border-bottom: none;
+    }
     .topportlet-static{
         margin-right: auto;
         p:first-child{
@@ -102,11 +112,12 @@
     [class^="icon-"] a:hover::after{
         content: attr(aria-label);
         position: absolute;
-        background-color: @color-default;
+        background-color: @color-light;
+        color: @color-default;
         top: 100%;
         border-radius: 8px;
         padding: 0.2rem 0.5rem;
-        margin-top: 1rem;
+        left: -2rem;
     }
     .topportlet-action-top_actions{
         .glyphicon.link-https{
