@@ -716,3 +716,70 @@ body#tinymce{
         }
     }
 }
+@media (max-width: 480px) {
+    body {
+        h1 {
+            font-size: 2.6rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        .article{
+            padding: 10vw 7vw;
+        }
+        #portal-top-wrapper,
+        #content-header .container #portal-top,
+        #portal-footer-wrapper .portlet-static-copyright{
+            padding: 0;
+        }
+        .article .content{
+            flex-direction: column;
+        }
+        .article .content .article-image:not(.circle){
+            width: 100% !important;
+            height: 60vw !important;
+            margin: 1rem 0 !important;
+        }
+        .article-galery{
+            flex-direction: column;
+        }
+        .article-thumbs{
+            width: 100%;
+            padding-top: 100%;
+        }
+        .article .content .article-columns-5 .article-content-icon{
+            width: 30vw;
+            height: 30vw;
+        }
+        .reference-logo{
+            width: 50vw;
+            height: 30vw;
+            margin: 0.5rem;
+        }
+        .article-thumbs.column-5{
+            width: 100%;
+            min-height: 90vw;
+            padding-top: 100%;
+        }
+        .article .content .article-image.vw-10.circle{
+            width: 50vw;
+            height: 50vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #carousel-thumb.member-about .carousel-inner .carousel-item a .image{
+            width: 50vw;
+            height: 50vw;
+        }
+        .article-column{
+            margin: 4rem 0;
+        }
+        .mosaic-grid-row{
+            padding: 0;
+            .mosaic-tile-content > .article,
+            .testimony{
+                margin: 0;
+            }
+        }
+    }
+}
