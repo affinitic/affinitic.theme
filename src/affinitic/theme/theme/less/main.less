@@ -17,6 +17,15 @@ body{
             }
         }
     }
+    .highlightedSearchTerm{
+        background: transparent;
+        border-radius: 4px;
+        box-shadow: none;
+        &::before,
+        &::after{
+            content: "''";
+        }
+    }
     #content {
         margin-bottom: 0;
     }
