@@ -653,3 +653,66 @@ body#tinymce{
     background-image: none;
     color: @color-dark;
 }
+@media (max-width: 768px) {
+    body{
+        h1{
+            margin-bottom: 1rem;
+        }
+        .article > .content.galery{
+            display: block;
+        }
+        .article-column {
+            margin: 5vw;
+            width: calc(100% - 10vw);
+        }
+        .carousel-control-prev,
+        .carousel-control-next{
+            transform: translateX(0);
+        }
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper .plone-navbar-nav a{
+            color: @color-default;
+        }
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper .plone-navbar-nav li:hover a{
+            color: @color-light;
+        }
+        #portal-top #portal-mainnavigation #portal-globalnav-wrapper #portal-globalnav li:hover{
+            color: @color-light;
+            background-color: @color-default;
+        }
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper #portal-globalnav #portaltab-index_html a::before{
+            color: @color-default;
+        }
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper .plone-navbar-collapse{
+            padding: 1rem;
+        }
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper .plone-navbar-nav > .selected > a,
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper .plone-navbar-nav > .selected > a:hover,
+        #content-header .container #portal-top #portal-mainnavigation #portal-globalnav-wrapper .plone-navbar-nav > .selected > a:focus{
+            border: none;
+        }
+        #portaltab-index_html:hover{
+            background-color: transparent !important;
+        }
+        .article-thumbs.column-5{
+            width: 50%;
+            padding-top: 50%;
+        }
+        .reference-logo{
+            width: 20vw;
+            height: 10vw;
+        }
+        .article .content .article-columns-5 .article-content-icon{
+            width: 10vw;
+            height: 10vw;
+        }
+        .content-team{
+            justify-content: center;
+        }
+        .article-galery.services{
+            flex-direction: column;
+            .article-columns-5{
+                width: 100%;
+            }
+        }
+    }
+}
